@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 
+import boilerplatecode from "./json/boilerplatecode.json";
+
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
 
@@ -10,6 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.showInformationMessage(
       "Hello World from VS code User Snippets!"
     );
+
+    console.log(boilerplatecode);
   });
 
   /**
