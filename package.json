@@ -18,6 +18,18 @@
       {
         "command": "vsus.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "vsus.showInfoNotification",
+        "title": "Information Notification"
+      },
+      {
+        "command": "vsus.showWarningNotification",
+        "title": "Warning Notification"
+      },
+      {
+        "command": "vsus.showErrorNotification",
+        "title": "Error Notification"
       }
     ]
   },
