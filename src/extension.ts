@@ -60,6 +60,47 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+
+  const Java = vscode.languages.registerCompletionItemProvider(
+    "java",
+    {
+      provideCompletionItems(
+        document: vscode.TextDocument,
+        position: vscode.Position,
+        token: vscode.CancellationToken,
+        context: vscode.CompletionContext
+      ) {
+        const snippetCompletion = new vscode.CompletionItem(
+          boilerplatecode.Java.prefix
+        );
+        let body = boilerplatecode.Java.body.join("");
+        snippetCompletion.insertText = new vscode.SnippetString(body);
+        // return all completion items as array
+        return [snippetCompletion];
+      },
+    }
+  );
+
+
+  const Go = vscode.languages.registerCompletionItemProvider(
+    "go",
+    {
+      provideCompletionItems(
+        document: vscode.TextDocument,
+        position: vscode.Position,
+        token: vscode.CancellationToken,
+        context: vscode.CompletionContext
+      ) {
+        const snippetCompletion = new vscode.CompletionItem(
+          boilerplatecode.Go.prefix
+        );
+        let body = boilerplatecode.Go.body.join("");
+        snippetCompletion.insertText = new vscode.SnippetString(body);
+        // return all completion items as array
+        return [snippetCompletion];
+      },
+    }
+  );
   /**
    * TODO: Notification Sample
    * @Susheel

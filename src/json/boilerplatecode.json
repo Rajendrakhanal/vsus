@@ -23,15 +23,27 @@
     "description": "Log output to console"
   },
   "Java": {
-    "prefix": "boiler plate code",
+    "prefix": "import",
     "body": [
-      "import java.util.*\n",
-      "import java.io.*\n\n",
-      "public class MyClass\n{",
-      "\tpublic static void main(String[] args){\n\n",
-      "\t}",
+      "import java.util.*;\n",
+      "import java.io.*;\n\n",
+      "public class MyClass$0\n{",
+      "\t\n\tpublic static void main(String[] args)\n\t{\n\n",
+      "\t}\n",
       "}"
     ],
     "description": "Log output to console"
+  },
+  "Go":{
+    "prefix":"package",
+    "body": [
+      "package main\n\n",
+      "import ( \"fmt\" )\n\n",
+      "func main()\n{",
+      "\n\t$0\n",
+      "}"
+    ],
+    "description": "Log output to console"
+
   }
 }
