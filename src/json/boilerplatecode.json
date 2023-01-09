@@ -1,0 +1,37 @@
+{
+  "C": {
+    "prefix": "boiler plate code",
+    "body": [
+      "#include <stdio.h>\n",
+      "int main()\n{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+  "C++": {
+    "prefix": "boiler plate code",
+    "body": [
+      "#include <iostream.h>\n",
+      "using namepace std;\n\n",
+      "int main()\n{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+  "Java": {
+    "prefix": "boiler plate code",
+    "body": [
+      "import java.util.*\n",
+      "import java.io.*\n\n",
+      "public class MyClass\n{",
+      "\tpublic static void main(String[] args){\n\n",
+      "\t}",
+      "}"
+    ],
+    "description": "Log output to console"
+  }
+}
