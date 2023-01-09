@@ -101,5 +101,22 @@
       "}  while ( ${2:condition} ) ;\n"
     ],
     "description": "Log output to console"
+  },
+  "function": {
+    "prefix": "function",
+    "body": [
+      "${1:return_type} ${2:fn_name} ( ${3:params} ){",
+      "\t$4\n",
+      "\t$5",
+      "}\n$0"
+    ]
+  },
+  "for_loop": {
+    "prefix": "for-loop",
+    "body": [
+      "for( ${1:int} ${2:i} = ${3:0} ; ${2:i} < ${4:n} ; ${2: i}++ ){",
+      "\t$5",
+      "}\n$0"
+    ]
   }
 }
