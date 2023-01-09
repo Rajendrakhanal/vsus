@@ -1,23 +1,23 @@
 {
   "C": {
-    "prefix": "boiler plate code",
+    "prefix": "include",
     "body": [
       "#include <stdio.h>\n",
       "int main()\n{",
-      "\t$0",
-      "\treturn 0;",
+      "\n\t$0",
+      "\n\treturn 0;\n",
       "}"
     ],
     "description": "Log output to console"
   },
   "C++": {
-    "prefix": "boiler plate code",
+    "prefix": "include",
     "body": [
-      "#include <iostream.h>\n",
-      "using namepace std;\n\n",
+      "#include <iostream>\n",
+      "using namespace std;\n\n",
       "int main()\n{",
-      "\t$0",
-      "\treturn 0;",
+      "\n\t$0",
+      "\n\treturn 0;\n",
       "}"
     ],
     "description": "Log output to console"

@@ -9,9 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
    * * Creating and Registering the command
    */
   const helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
-    vscode.window.showInformationMessage(
-      "Hello World from VS code User Snippets!"
-    );
+    vscode.window.showInformationMessage("Welcome to VSUS");
 
     console.log(boilerplatecode);
   });
@@ -22,6 +20,45 @@ export function activate(context: vscode.ExtensionContext) {
    * @Ujjwal
    * @Saurav
    */
+  const C = vscode.languages.registerCompletionItemProvider(
+    "c",
+    {
+      provideCompletionItems(
+        document: vscode.TextDocument,
+        position: vscode.Position,
+        token: vscode.CancellationToken,
+        context: vscode.CompletionContext
+      ) {
+        const snippetCompletion = new vscode.CompletionItem(
+          boilerplatecode.C.prefix
+        );
+        let body = boilerplatecode.C.body.join("");
+        snippetCompletion.insertText = new vscode.SnippetString(body);
+        // return all completion items as array
+        return [snippetCompletion];
+      },
+    }
+  );
+
+  const cpp = vscode.languages.registerCompletionItemProvider(
+    "cpp",
+    {
+      provideCompletionItems(
+        document: vscode.TextDocument,
+        position: vscode.Position,
+        token: vscode.CancellationToken,
+        context: vscode.CompletionContext
+      ) {
+        const snippetCompletion = new vscode.CompletionItem(
+          boilerplatecode["C++"].prefix
+        );
+        let body = boilerplatecode["C++"].body.join("");
+        snippetCompletion.insertText = new vscode.SnippetString(body);
+        // return all completion items as array
+        return [snippetCompletion];
+      },
+    }
+  );
 
   /**
    * TODO: Notification Sample
