@@ -1,0 +1,105 @@
+{
+    "Author_and_program_detail": {
+        "prefix": "author",
+        "body": [
+            "/**\n",
+            " *\t @author: ${1:Anonyms}",
+            " *\t @desc: ${2:description}",
+            " *\t @time: ${3:$CURRENT_DAY_NAME $CURRENT_DATE-$CURRENT_MONTH_NAME-$CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}",
+            " \n**/\n"
+        ],
+        "description": "simple c file structure"
+    },
+    "print": {
+        "prefix": "printf",
+        "body": "printf(\"${1:content}\");\n$0",
+        "description": "prints statement in console"
+    },
+    "scan": {
+        "prefix": "scanf",
+        "body": "scanf(\"${1:content}\"$2);\n$0",
+        "description": "scans from console"
+    },
+    "comment": {
+        "prefix": "/",
+        "body": "/* $1 */$0",
+        "description": "multiline comment in C++"
+    },
+    "if": {
+        "prefix": "if-else",
+        "body": [
+            "if ( ${1:condition} ){",
+            "\t$2",
+            "}"
+        ],
+        "description": "Log output to console"
+    },
+    "if-else": {
+        "prefix": "if-else",
+        "body": [
+            "if ( ${1:condition} ){",
+            "\t$2",
+            "}",
+            "else ( ${3:condition} ){",
+            "\t$4",
+            "}"
+        ],
+        "description": "Log output to console"
+    },
+    "if-elseif-else": {
+        "prefix": "if-elseif-else",
+        "body": [
+            "if ( ${1:condition1} ){",
+            "\t$2",
+            "}",
+            "else if ( ${3:condition2} ){",
+            "\t$4",
+            "}",
+            "else ( ${5:condition} ){",
+            "\t$6",
+            "}"
+        ],
+        "description": "Log output to console"
+    },
+    "switch-case": {
+        "prefix": "switch-case",
+        "body": [
+            "switch ( ${1:variable_name} ){\n",
+            "\tcase ${2:val} :",
+            "\t\t$3",
+            "\t\tbreak;",
+            "}",
+            "\tcase ${4:val} :",
+            "\t\t$5",
+            "\t\tbreak;",
+            "}",
+            "\tcase ${6:val} :",
+            "\t\t$7",
+            "\t\tbreak;",
+            "}",
+            "\tdefault :",
+            "\t\t$8",
+            "\t\tbreak;",
+            "}\n"
+        ],
+        "description": "Log output to console"
+    },
+    "while_loop": {
+        "prefix": "while",
+        "body": [
+            "while ( ${1:condition} ){",
+            "\t$2",
+            "}\n"
+        ],
+        "description": "Log output to console"
+    },
+    "do_while_loop": {
+        "prefix": "do-while",
+        "body": [
+            "do {",
+            "\t$1",
+            "}  while ( ${2:condition} ) ;\n"
+        ],
+        "description": "Log output to console"
+    }
+}
