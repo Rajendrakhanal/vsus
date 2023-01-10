@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vsus.helloWorld"
+    "onCommand:vsus.welcome"
   ],
   "main": "./dist/extension.js",
   "contributes": {
