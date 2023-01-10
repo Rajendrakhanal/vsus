@@ -10,6 +10,7 @@
     ],
     "description": "Log output to console"
   },
+
   "C++": {
     "prefix": "include",
     "body": [
@@ -22,20 +23,22 @@
     ],
     "description": "Log output to console"
   },
+
   "Java": {
     "prefix": "import",
     "body": [
       "import java.util.*;\n",
       "import java.io.*;\n\n",
-      "public class MyClass$0\n{",
+      "public class ${0:MyClass}\n{",
       "\t\n\tpublic static void main(String[] args)\n\t{\n\n",
       "\t}\n",
       "}"
     ],
     "description": "Log output to console"
   },
-  "Go":{
-    "prefix":"package",
+
+  "Go": {
+    "prefix": "package",
     "body": [
       "package main\n\n",
       "import ( \"fmt\" )\n\n",
@@ -44,6 +47,17 @@
       "}"
     ],
     "description": "Log output to console"
+  },
 
+  "Csharp": {
+    "prefix": "using",
+    "body": [
+      "using system;\n\n",
+      "class ${0:MyClass}\n{",
+      "\t\n\tstatic void Main(String[] args)\n\t{\n\n",
+      "\t}\n",
+      "}"
+    ],
+    "description": "Log output to console"
   }
 }

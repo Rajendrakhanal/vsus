@@ -20,87 +20,90 @@ export function activate(context: vscode.ExtensionContext) {
    * @Ujjwal
    * @Saurav
    */
-  const C = vscode.languages.registerCompletionItemProvider(
-    "c",
-    {
-      provideCompletionItems(
-        document: vscode.TextDocument,
-        position: vscode.Position,
-        token: vscode.CancellationToken,
-        context: vscode.CompletionContext
-      ) {
-        const snippetCompletion = new vscode.CompletionItem(
-          boilerplatecode.C.prefix
-        );
-        let body = boilerplatecode.C.body.join("");
-        snippetCompletion.insertText = new vscode.SnippetString(body);
-        // return all completion items as array
-        return [snippetCompletion];
-      },
-    }
-  );
+  const C = vscode.languages.registerCompletionItemProvider("c", {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode.C.prefix
+      );
+      let body = boilerplatecode.C.body.join("");
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+      // return all completion items as array
+      return [snippetCompletion];
+    },
+  });
 
-  const cpp = vscode.languages.registerCompletionItemProvider(
-    "cpp",
-    {
-      provideCompletionItems(
-        document: vscode.TextDocument,
-        position: vscode.Position,
-        token: vscode.CancellationToken,
-        context: vscode.CompletionContext
-      ) {
-        const snippetCompletion = new vscode.CompletionItem(
-          boilerplatecode["C++"].prefix
-        );
-        let body = boilerplatecode["C++"].body.join("");
-        snippetCompletion.insertText = new vscode.SnippetString(body);
-        // return all completion items as array
-        return [snippetCompletion];
-      },
-    }
-  );
+  const cpp = vscode.languages.registerCompletionItemProvider("cpp", {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode["C++"].prefix
+      );
+      let body = boilerplatecode["C++"].body.join("");
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+      // return all completion items as array
+      return [snippetCompletion];
+    },
+  });
 
+  const Java = vscode.languages.registerCompletionItemProvider("java", {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode.Java.prefix
+      );
+      let body = boilerplatecode.Java.body.join("");
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+      // return all completion items as array
+      return [snippetCompletion];
+    },
+  });
 
-  const Java = vscode.languages.registerCompletionItemProvider(
-    "java",
-    {
-      provideCompletionItems(
-        document: vscode.TextDocument,
-        position: vscode.Position,
-        token: vscode.CancellationToken,
-        context: vscode.CompletionContext
-      ) {
-        const snippetCompletion = new vscode.CompletionItem(
-          boilerplatecode.Java.prefix
-        );
-        let body = boilerplatecode.Java.body.join("");
-        snippetCompletion.insertText = new vscode.SnippetString(body);
-        // return all completion items as array
-        return [snippetCompletion];
-      },
-    }
-  );
+  const Go = vscode.languages.registerCompletionItemProvider("go", {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode.Go.prefix
+      );
+      let body = boilerplatecode.Go.body.join("");
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+      // return all completion items as array
+      return [snippetCompletion];
+    },
+  });
 
-
-  const Go = vscode.languages.registerCompletionItemProvider(
-    "go",
-    {
-      provideCompletionItems(
-        document: vscode.TextDocument,
-        position: vscode.Position,
-        token: vscode.CancellationToken,
-        context: vscode.CompletionContext
-      ) {
-        const snippetCompletion = new vscode.CompletionItem(
-          boilerplatecode.Go.prefix
-        );
-        let body = boilerplatecode.Go.body.join("");
-        snippetCompletion.insertText = new vscode.SnippetString(body);
-        // return all completion items as array
-        return [snippetCompletion];
-      },
-    }
-  );
+  const Csharp = vscode.languages.registerCompletionItemProvider("csharp", {
+    provideCompletionItems(
+      document: vscode.TextDocument,
+      position: vscode.Position,
+      token: vscode.CancellationToken,
+      context: vscode.CompletionContext
+    ) {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode.Csharp.prefix
+      );
+      let body = boilerplatecode.Csharp.body.join("");
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+      // return all completion items as array
+      return [snippetCompletion];
+    },
+  });
   /**
    * TODO: Notification Sample
    * @Susheel
