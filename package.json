@@ -16,8 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "vsus.helloWorld",
-        "title": "Hello World"
+        "command": "vsus.welcome",
+        "title": "vsus"
       },
       {
         "command": "vsus.showInfoNotification",

@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
   /**
    * * Creating and Registering the command
    */
-  const helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
+  const helloWorld = vscode.commands.registerCommand("vsus.welcome", () => {
     vscode.window.showInformationMessage("Welcome to VSUS");
 
     console.log(boilerplatecode);
