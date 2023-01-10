@@ -17,7 +17,7 @@
     },
     "scan": {
         "prefix": "scanf",
-        "body": "scanf(\"${1:content}\"$2);\n$0",
+        "body": "scanf(\"${1:content}\"${2});\n$0",
         "description": "scans from console"
     },
     "comment": {
