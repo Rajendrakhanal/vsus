@@ -30,9 +30,9 @@
     "body": [
       "if ( ${1:condition} ){",
       "\t$2",
-      "}"
+      "}\n"
     ],
-    "description": "Log output to console"
+    "description": "if statement which runs given condition is true"
   },
   "if-else": {
     "prefix": "if-else",
@@ -42,9 +42,9 @@
       "}",
       "else ( ${3:condition} ){",
       "\t$4",
-      "}"
+      "}\n"
     ],
-    "description": "Log output to console"
+    "description": "if condition is true if block runs otherwise else block runs"
   },
   "if-elseif-else": {
     "prefix": "if-elseif-else",
@@ -57,9 +57,9 @@
       "}",
       "else ( ${5:condition} ){",
       "\t$6",
-      "}"
+      "}\n"
     ],
-    "description": "Log output to console"
+    "description": "For multiple condition, you can use this if-elseif-else "
   },
   "switch-case": {
     "prefix": "switch-case",
@@ -82,7 +82,7 @@
       "\t\tbreak;",
       "}\n"
     ],
-    "description": "Log output to console"
+    "description": "for different cases, we use this switch statement"
   },
   "while_loop": {
     "prefix": "while",
@@ -91,16 +91,16 @@
       "\t$2",
       "}\n"
     ],
-    "description": "Log output to console"
+    "description": "Run a block of code while the condition is true"
   },
   "do_while_loop": {
     "prefix": "do-while",
     "body": [
       "do {",
-      "\t$1",
-      "}  while ( ${2:condition} ) ;\n"
+      "\t${2:statement}",
+      "}  while ( ${1:condition} ) ;\n"
     ],
-    "description": "Log output to console"
+    "description": "First executes once and then check while condition to run again"
   },
   "function": {
     "prefix": "function",
@@ -109,7 +109,8 @@
       "\t$4\n",
       "\t$5",
       "}\n$0"
-    ]
+    ],
+    "description": "Takes some argument, does its task and returns something"
   },
   "for_loop": {
     "prefix": "for-loop",
@@ -117,6 +118,48 @@
       "for( ${1:int} ${2:i} = ${3:0} ; ${2:i} < ${4:n} ; ${2: i}++ ){",
       "\t$5",
       "}\n$0"
-    ]
+    ],
+    "description": "Repeats a block of code till it reaches the given end condition"
+  },
+  "ternary_operator( Exp1 ? Exp2 : Exp3)": {
+    "prefix": "ternary",
+    "body": [
+      "${1:exp1} ? ${2:exp2} : ${3:exp3}$0"
+    ],
+    "description": "If condition(exp1) is true then runs exp2 else runs exp3"
+  },
+  "struct (User Defined Data Type)": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:struct_name}  ",
+      "{",
+      "\t${2:// struct members}",
+      "}$3;",
+      "$0"
+    ],
+    "description": "Creates your user defined data type"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:class_name}",
+      "{",
+      "private:",
+      "\t${2:data}",
+      "public:",
+      "\t${1:studnet}( ${3:args} );",
+      "\t~${1:class_name}();",
+      "};",
+      "",
+      "${1:class_name}::${1:class_name}( ${3:args} )",
+      "{",
+      "}",
+      "",
+      "${1:class_name}::~${1:class_name}()",
+      "{",
+      "}",
+      "$0"
+    ],
+    "description": "Create your own user defined datatype using class"
   }
 }

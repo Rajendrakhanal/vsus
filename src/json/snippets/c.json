@@ -28,95 +28,115 @@
     "if": {
         "prefix": "if-else",
         "body": [
-            "if ( ${1:condition} ){",
-            "\t$2",
-            "}"
+          "if ( ${1:condition} ){",
+          "\t$2",
+          "}\n"
         ],
-        "description": "Log output to console"
-    },
-    "if-else": {
+        "description": "if statement which runs given condition is true"
+      },
+      "if-else": {
         "prefix": "if-else",
         "body": [
-            "if ( ${1:condition} ){",
-            "\t$2",
-            "}",
-            "else ( ${3:condition} ){",
-            "\t$4",
-            "}"
+          "if ( ${1:condition} ){",
+          "\t$2",
+          "}",
+          "else ( ${3:condition} ){",
+          "\t$4",
+          "}\n"
         ],
-        "description": "Log output to console"
-    },
-    "if-elseif-else": {
+        "description": "if condition is true if block runs otherwise else block runs"
+      },
+      "if-elseif-else": {
         "prefix": "if-elseif-else",
         "body": [
-            "if ( ${1:condition1} ){",
-            "\t$2",
-            "}",
-            "else if ( ${3:condition2} ){",
-            "\t$4",
-            "}",
-            "else ( ${5:condition} ){",
-            "\t$6",
-            "}"
+          "if ( ${1:condition1} ){",
+          "\t$2",
+          "}",
+          "else if ( ${3:condition2} ){",
+          "\t$4",
+          "}",
+          "else ( ${5:condition} ){",
+          "\t$6",
+          "}\n"
         ],
-        "description": "Log output to console"
-    },
-    "switch-case": {
+        "description": "For multiple condition, you can use this if-elseif-else "
+      },
+      "switch-case": {
         "prefix": "switch-case",
         "body": [
-            "switch ( ${1:variable_name} ){\n",
-            "\tcase ${2:val} :",
-            "\t\t$3",
-            "\t\tbreak;",
-            "}",
-            "\tcase ${4:val} :",
-            "\t\t$5",
-            "\t\tbreak;",
-            "}",
-            "\tcase ${6:val} :",
-            "\t\t$7",
-            "\t\tbreak;",
-            "}",
-            "\tdefault :",
-            "\t\t$8",
-            "\t\tbreak;",
-            "}\n"
+          "switch ( ${1:variable_name} ){\n",
+          "\tcase ${2:val} :",
+          "\t\t$3",
+          "\t\tbreak;",
+          "}",
+          "\tcase ${4:val} :",
+          "\t\t$5",
+          "\t\tbreak;",
+          "}",
+          "\tcase ${6:val} :",
+          "\t\t$7",
+          "\t\tbreak;",
+          "}",
+          "\tdefault :",
+          "\t\t$8",
+          "\t\tbreak;",
+          "}\n"
         ],
-        "description": "Log output to console"
-    },
-    "while_loop": {
+        "description": "for different cases, we use this switch statement"
+      },
+      "while_loop": {
         "prefix": "while",
         "body": [
-            "while ( ${1:condition} ){",
-            "\t$2",
-            "}\n"
+          "while ( ${1:condition} ){",
+          "\t$2",
+          "}\n"
         ],
-        "description": "Log output to console"
-    },
-    "do_while_loop": {
+        "description": "Run a block of code while the condition is true"
+      },
+      "do_while_loop": {
         "prefix": "do-while",
         "body": [
-            "do {",
-            "\t$1",
-            "}  while ( ${2:condition} ) ;\n"
+          "do {",
+          "\t${2:statement}",
+          "}  while ( ${1:condition} ) ;\n"
         ],
-        "description": "Log output to console"
-    },
-    "function": {
+        "description": "First executes once and then check while condition to run again"
+      },
+      "function": {
         "prefix": "function",
         "body": [
-            "${1:return_type} ${2:fn_name} ( ${3:params} ){",
-            "\t$4\n",
-            "\t$5",
-            "}\n$0"
-        ]
+          "${1:return_type} ${2:fn_name} ( ${3:params} ){",
+          "\t$4\n",
+          "\t$5",
+          "}\n$0"
+        ],
+        "description": "Takes some argument, does its task and returns something"
       },
       "for_loop": {
         "prefix": "for-loop",
         "body": [
-            "for( ${1:int} ${2:i} = ${3:0} ; ${2:i} < ${4:n} ; ${2: i}++ ){",
-            "\t$5",
-            "}\n$0"
-        ]
+          "for( ${1:int} ${2:i} = ${3:0} ; ${2:i} < ${4:n} ; ${2: i}++ ){",
+          "\t$5",
+          "}\n$0"
+        ],
+        "description": "Repeats a block of code till it reaches the given end condition"
+      },
+      "ternary_operator( Exp1 ? Exp2 : Exp3)": {
+        "prefix": "ternary",
+        "body": [
+          "${1:exp1} ? ${2:exp2} : ${3:exp3}$0"
+        ],
+        "description": "If condition(exp1) is true then runs exp2 else runs exp3"
+      },
+      "struct (User Defined Data Type)": {
+        "prefix": "struct",
+        "body": [
+          "struct ${1:struct_name}  ",
+          "{",
+          "\t${2:// struct members}",
+          "}$3;",
+          "$0"
+        ],
+        "description": "Creates your user defined data type"
       }
 }
