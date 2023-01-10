@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { createProject } from "./projects";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -8,6 +9,15 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(disposable);
+
+  const cppProject = vscode.commands.registerCommand(
+    "vsus.createCPPProject",
+    () => {
+      createProject("cpp");
+    }
+  );
+
+  context.subscriptions.push(cppProject);
 }
 
 export function deactivate() {}
