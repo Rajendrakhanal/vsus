@@ -20,10 +20,12 @@ export namespace cppProject {
 
     projectDetails.files.forEach((file) => {
       const { name, parent, content } = file;
+
+      const fileContent = content.join("");
       if (parent === "src") {
-        createFile(path.join(destination, parent), name, content);
+        createFile(path.join(destination, parent), name, fileContent);
       } else {
-        createFile(destination, name, content);
+        createFile(destination, name, fileContent);
       }
     });
 

@@ -5,11 +5,37 @@
       {
         "name": "main.cpp",
         "parent": "src",
-        "content": "#include <iostream>\n\nint main(int argc, char **argv) {\n\tstd::cout << 'Enjoy :)' << std::endl;\n\treturn 0;\n}"
+        "content": [
+          "#include <stdio.h>\n",
+          "int main()\n{",
+          "\n",
+          "\n\treturn 0;\n",
+          "}"
+        ]
       },
       {
         "name": "Makefile",
-        "content": "CC\t\t:= g++\nC_FLAGS := -std=c++17 -Wall -Wextra\n\nBIN\t\t:= bin\nSRC\t\t:= src\nINCLUDE\t:= include\nLIB\t\t:= lib\n\nLIBRARIES\t:=\n\nifeq ($(OS),Windows_NT)\nEXECUTABLE\t:= main.exe\nelse\nEXECUTABLE\t:= main\nendif\n\nall: $(BIN)/$(EXECUTABLE)\n\nclean:\n\t$(RM) $(BIN)/$(EXECUTABLE)\n\nrun: all\n\t./$(BIN)/$(EXECUTABLE)\n\n$(BIN)/$(EXECUTABLE): $(SRC)/*\n\t$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)"
+        "content": [
+          "CC\t\t:= g++\n",
+          "C_FLAGS := -std=c++17 -Wall -Wextra\n\n",
+          "BIN\t\t:= bin\n",
+          "SRC\t\t:= src\n",
+          "INCLUDE\t:= include\n",
+          "LIB\t\t:= lib\n\n",
+          "LIBRARIES\t:=\n\n",
+          "ifeq ($(OS),Windows_NT)\n",
+          "EXECUTABLE\t:= main.exe\n",
+          "else\n",
+          "EXECUTABLE\t:= main\n",
+          "endif\n\n",
+          "all: $(BIN)/$(EXECUTABLE)\n\n",
+          "clean:\n",
+          "\t$(RM) $(BIN)/$(EXECUTABLE)\n\n",
+          "run: all\n",
+          "\t./$(BIN)/$(EXECUTABLE)\n\n",
+          "$(BIN)/$(EXECUTABLE): $(SRC)/*\n",
+          "\t$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)"
+        ]
       }
     ]
   }
