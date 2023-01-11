@@ -22,6 +22,10 @@
       {
         "command": "vsus.createCPPProject",
         "title": "Create Project: C++"
+      },
+      {
+        "command": "vsus.createNodeProject",
+        "title": "Create Project: NodeJS"
       }
     ]
   },

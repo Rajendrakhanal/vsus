@@ -16,8 +16,14 @@ export function activate(context: vscode.ExtensionContext) {
       createProject("cpp");
     }
   );
+  const nodeProject = vscode.commands.registerCommand(
+    "vsus.createNodeProject",
+    () => {
+      createProject("node");
+    }
+  );
 
-  context.subscriptions.push(cppProject);
+  context.subscriptions.push(cppProject, nodeProject);
 }
 
 export function deactivate() {}
