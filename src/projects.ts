@@ -3,7 +3,6 @@
 import * as vscode from "vscode";
 import { openDialogBox } from "./utils/openDialogBox";
 
-
 import { reactProject } from "./projects/react";
 import { cppProject } from "./projects/cpp";
 import { nodeProject } from "./projects/node";
@@ -15,18 +14,25 @@ export async function createProject(fileType: string) {
 
   if (folderName && folderName.fsPath) {
     switch (fileType) {
-      case "c":   
+      case "c":
         await vscode.commands.executeCommand("vscode.openFolder", folderName);
         await cProject.create(folderName.fsPath);
         break;
 
+      case "cpp":
+        await vscode.commands.executeCommand("vscode.openFolder", folderName);
+        await cppProject.create(folderName.fsPath);
+        break;
+
       case "react":
         await reactProject.createReactProject(folderName.fsPath);
+        break;
 
-      case "django":   
+      case "django":
         await vscode.commands.executeCommand("vscode.openFolder", folderName);
         await djangoProject.createReactProject(folderName.fsPath);
         break;
+
       case "node":
         await vscode.commands.executeCommand("vscode.openFolder", folderName);
         await nodeProject.create(folderName.fsPath);
