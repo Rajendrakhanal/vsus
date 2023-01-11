@@ -27,7 +27,7 @@
         "command": "vsus.showErrorNotification",
         "title": "Error Notification"
       },
-      {       
+      {
         "command": "vsus.helloWorld",
         "title": "Hello World"
       },
@@ -60,7 +60,7 @@
       {
         "language": "cpp",
         "path": "./src/json/snippets/cpp.json"
-      },
+      }
     ]
   },
   "scripts": {

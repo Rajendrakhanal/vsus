@@ -4,7 +4,6 @@ import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
 
-
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
 
@@ -94,7 +93,7 @@ export function activate(context: vscode.ExtensionContext) {
       snippetCompletion.insertText = new vscode.SnippetString(body);
       // return all completion items as array
       return [snippetCompletion];
-    },
+    },});
 
   const showInfoNotification = vscode.commands.registerCommand(
     "vsus.showInfoNotification",
