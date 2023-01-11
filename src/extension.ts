@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
 import { createProject } from "./projects";
 
-
 import boilerplatecode from "./json/boilerplatecode.json";
 
 export function activate(context: vscode.ExtensionContext) {
@@ -9,91 +8,14 @@ export function activate(context: vscode.ExtensionContext) {
 
   let helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
     vscode.window.showInformationMessage("Hello World from VSUS!");
+    console.log(vscode.window.activeTextEditor?.document.fileName);
   });
 
-  const C = vscode.languages.registerCompletionItemProvider("c", {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode.C.prefix
-      );
-      let body = boilerplatecode.C.body.join("");
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-      // return all completion items as array
-      return [snippetCompletion];
-    },
-  });
-
-  const cpp = vscode.languages.registerCompletionItemProvider("cpp", {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode["C++"].prefix
-      );
-      let body = boilerplatecode["C++"].body.join("");
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-      // return all completion items as array
-      return [snippetCompletion];
-    },
-  });
-
-  const Java = vscode.languages.registerCompletionItemProvider("java", {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode.Java.prefix
-      );
-      let body = boilerplatecode.Java.body.join("");
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-      // return all completion items as array
-      return [snippetCompletion];
-    },
-  });
-
-  const Go = vscode.languages.registerCompletionItemProvider("go", {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode.Go.prefix
-      );
-      let body = boilerplatecode.Go.body.join("");
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-      // return all completion items as array
-      return [snippetCompletion];
-    },
-  });
-
-  const Csharp = vscode.languages.registerCompletionItemProvider("csharp", {
-    provideCompletionItems(
-      document: vscode.TextDocument,
-      position: vscode.Position,
-      token: vscode.CancellationToken,
-      context: vscode.CompletionContext
-    ) {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode.Csharp.prefix
-      );
-      let body = boilerplatecode.Csharp.body.join("");
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-      // return all completion items as array
-      return [snippetCompletion];
-    },});
+  const c = getLanguageCompletion("c");
+  const cpp = getLanguageCompletion("cpp");
+  const java = getLanguageCompletion("java");
+  const go = getLanguageCompletion("go");
+  const csharp = getLanguageCompletion("csharp");
 
   const showInfoNotification = vscode.commands.registerCommand(
     "vsus.showInfoNotification",
@@ -113,7 +35,6 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.window.showErrorMessage("Error from VSUS");
     }
   );
-
 
   const cProject = vscode.commands.registerCommand(
     "vsus.createCProject",
@@ -160,8 +81,25 @@ export function activate(context: vscode.ExtensionContext) {
     showErrorNotification,
     showInfoNotification,
     showWarningNotification
-
   );
 }
+
+const getLanguageCompletion = (
+  language: "c" | "cpp" | "java" | "csharp" | "go"
+): vscode.Disposable => {
+  return vscode.languages.registerCompletionItemProvider(language, {
+    provideCompletionItems() {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode[language].prefix
+      );
+
+      let body = boilerplatecode[language].body.join("");
+
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+
+      return [snippetCompletion];
+    },
+  });
+};
 
 export function deactivate() {}
