@@ -1,5 +1,5 @@
 {
-  "C": {
+  "c": {
     "prefix": "include",
     "body": [
       "#include <stdio.h>\n",
@@ -11,7 +11,7 @@
     "description": "Log output to console"
   },
 
-  "C++": {
+  "cpp": {
     "prefix": "include",
     "body": [
       "#include <iostream>\n",
@@ -24,7 +24,7 @@
     "description": "Log output to console"
   },
 
-  "Java": {
+  "java": {
     "prefix": "import",
     "body": [
       "import java.util.*;\n",
@@ -37,7 +37,7 @@
     "description": "Log output to console"
   },
 
-  "Go": {
+  "go": {
     "prefix": "package",
     "body": [
       "package main\n\n",
@@ -49,7 +49,7 @@
     "description": "Log output to console"
   },
 
-  "Csharp": {
+  "csharp": {
     "prefix": "using",
     "body": [
       "using system;\n\n",
