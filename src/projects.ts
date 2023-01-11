@@ -17,6 +17,11 @@ export async function createProject(fileType: string) {
         await cProject.create(folderName.fsPath);
         break;
 
+        case "cpp":   
+        await vscode.commands.executeCommand("vscode.openFolder", folderName);
+        await cppProject.create(folderName.fsPath);
+        break;
+
       case "react":
         await reactProject.createReactProject(folderName.fsPath);
         break;

@@ -16,6 +16,12 @@ export function activate(context: vscode.ExtensionContext) {
       createProject("c");
     }
   );
+  const cppProject = vscode.commands.registerCommand(
+    "vsus.createCPPProject",
+    () => {
+      createProject("cpp");
+    }
+  );
   const reactProject = vscode.commands.registerCommand(
     "vsus.createReactProject",
     () => {
