@@ -31,6 +31,14 @@
         "command": "vsus.createReactProject",
         "title": "Create Project: React"
       }
+      ,
+      {
+        "command": "vsus.createNodeProject",
+        "title": "Create Project: NodeJS"
+      }
+        "command": "vsus.createdjangoProject",
+        "title": "Create Project: django"
+      }
     ]
   },
   "scripts": {

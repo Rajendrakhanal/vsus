@@ -40,7 +40,8 @@
       }
     ]
   },
-    "c": {
+
+  "c": {
     "dir": [".vscode", "bin", "include", "lib", "src"],
     "files": [
       {
@@ -57,6 +58,95 @@
       {
         "name": "Makefile",
         "content": []
+      }
+    ]
+  },
+  "node": {
+    "dir": ["middlewares", "modules", "routes", "services"],
+    "files": [
+      {
+        "name": "app.js",
+        "parent": "",
+        "content": [
+          "/**\n",
+          " * import all the necessary package\n",
+          " */\n",
+          "require('dotenv').config();\n\n",
+          "const morgan = require('morgan');\n",
+          "const express = require('express');\n",
+          "const app = express();\n\n",
+          "const { PORT } = process.env;\n",
+          "/**\n",
+          " * Connect to the mongodb database\n",
+          " */\n",
+          "const { connectMongoDB } = require('./services/database');\n",
+          "connectMongoDB();\n\n",
+          "/**\n",
+          " * middlewares\n",
+          " */\n",
+          "app.use(express.urlencoded({ extended: false }));\n",
+          "app.use(express.json());\n",
+          "app.use(morgan('dev'));\n\n",
+          "/**\n",
+          " * Custom routes\n",
+          " *\n",
+          " * You can add your custom routes in routes folder\n",
+          " * Import in this file and use it\n",
+          " *\n",
+          " */\n",
+          "const hello = require('./routes/hello')\n",
+          "app.use('/', hello);\n\n",
+          "/**\n",
+          " * Listening on the PORT defined by .env file\n",
+          " */\n",
+          "app.listen(PORT, () => {\n",
+          "\tconsole.log(`Listening on Port ${PORT}`);\n",
+          "});\n"
+        ]
+      },
+      {
+        "name": "README.md",
+        "parent": "",
+        "content": ["This is readme file"]
+      },
+      {
+        "name": ".env",
+        "parent": "",
+        "content": ["PORT=5000\n", "DATABASE=development"]
+      },
+      {
+        "name": "database.js",
+        "parent": "services",
+        "content": [
+          "require('dotenv').config();\n\n",
+          "const mongoose = require('mongoose');\n\n",
+          "const { DATABASE } = process.env;\n\n",
+          "mongoose.set('strictQuery', true);\n\n",
+          "const connectMongoDB = () => {\n",
+          "\t/**\n",
+          "\t * Connecting to mongodb database\n",
+          "\t */\n",
+          "\tmongoose\n",
+          "\t  .connect('mongodb://127.0.0.1/' + DATABASE)\n",
+          "\t  .then(() =>\n",
+          "\t    console.log('Successfully connect to ' + DATABASE + ' database')\n",
+          "\t)\n",
+          "\t  .catch((err) => console.log('Connection err',err));\n",
+          "};\n\n",
+          "module.exports = { connectMongoDB };\n"
+        ]
+      },
+      {
+        "name": "hello.js",
+        "parent": "routes",
+        "content": [
+          "const express = require('express');\n",
+          "const router = express.Router();\n\n",
+          "router.get('/', (req, res) => {\n",
+          "\tres.send('Hello from Node');\n",
+          "});\n\n",
+          "module.exports = router;\n"
+        ]
       }
     ]
   }
