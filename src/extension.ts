@@ -16,8 +16,16 @@ export function activate(context: vscode.ExtensionContext) {
       createProject("django");
     }
   );
+  const nodeProject = vscode.commands.registerCommand(
+    "vsus.createNodeProject",
+    () => {
+      createProject("node");
+    }
+  );
 
+  context.subscriptions.push(cppProject, nodeProject);
   context.subscriptions.push(djangoProject);
+
 }
 
 export function deactivate() {}

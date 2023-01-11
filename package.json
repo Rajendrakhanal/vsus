@@ -20,6 +20,13 @@
         "title": "Hello World"
       },
       {
+        "command": "vsus.createCPPProject",
+        "title": "Create Project: C++"
+      },
+      {
+        "command": "vsus.createNodeProject",
+        "title": "Create Project: NodeJS"
+      }
         "command": "vsus.createdjangoProject",
         "title": "Create Project: django"
       }
