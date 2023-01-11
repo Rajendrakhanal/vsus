@@ -1,21 +1,5 @@
-/**
- * @Ujjwal
- */
-/**
- * @Ujjwal
- */
-
-/**
- * @Ujjwal
- */
-
 import * as vscode from "vscode";
-import * as path from "path";
 
-import { createFile } from "../utils/createFile";
-import { createFolder } from "../utils/createFolder";
-
-import * as starterFile from "./staterContent.json";
 export namespace djangoProject {
 
 export const createReactProject = async (destination: string) => {
