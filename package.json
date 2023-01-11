@@ -10,11 +10,23 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vsus.helloWorld"
+    "onCommand:vsus.welcome"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
+      {
+        "command": "vsus.showInfoNotification",
+        "title": "Information Notification"
+      },
+      {
+        "command": "vsus.showWarningNotification",
+        "title": "Warning Notification"
+      },
+      {
+        "command": "vsus.showErrorNotification",
+        "title": "Error Notification"
+      },
       {
         "command": "vsus.helloWorld",
         "title": "Hello World"
@@ -38,6 +50,16 @@
       {
         "command": "vsus.createdjangoProject",
         "title": "Create Project: django"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./src/json/snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./src/json/snippets/cpp.json"
       }
     ]
   },

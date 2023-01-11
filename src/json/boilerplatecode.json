@@ -1,0 +1,63 @@
+{
+  "C": {
+    "prefix": "include",
+    "body": [
+      "#include <stdio.h>\n",
+      "int main()\n{",
+      "\n\t$0",
+      "\n\treturn 0;\n",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+
+  "C++": {
+    "prefix": "include",
+    "body": [
+      "#include <iostream>\n",
+      "using namespace std;\n\n",
+      "int main()\n{",
+      "\n\t$0",
+      "\n\treturn 0;\n",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+
+  "Java": {
+    "prefix": "import",
+    "body": [
+      "import java.util.*;\n",
+      "import java.io.*;\n\n",
+      "public class ${0:MyClass}\n{",
+      "\t\n\tpublic static void main(String[] args)\n\t{\n\n",
+      "\t}\n",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+
+  "Go": {
+    "prefix": "package",
+    "body": [
+      "package main\n\n",
+      "import ( \"fmt\" )\n\n",
+      "func main()\n{",
+      "\n\t$0\n",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+
+  "Csharp": {
+    "prefix": "using",
+    "body": [
+      "using system;\n\n",
+      "class ${0:MyClass}\n{",
+      "\t\n\tstatic void Main(String[] args)\n\t{\n\n",
+      "\t}\n",
+      "}"
+    ],
+    "description": "Log output to console"
+  }
+}
