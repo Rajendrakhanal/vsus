@@ -9,7 +9,7 @@ export async function createProject(fileType: string) {
 
   if (folderName && folderName.fsPath) {
     switch (fileType) {
-      case "c":
+      case "c":   
         await vscode.commands.executeCommand("vscode.openFolder", folderName);
         await cProject.create(folderName.fsPath);
         break;
