@@ -16,12 +16,14 @@ export function activate(context: vscode.ExtensionContext) {
       createProject("c");
     }
   );
+
   const cppProject = vscode.commands.registerCommand(
     "vsus.createCPPProject",
     () => {
       createProject("cpp");
     }
   );
+
   const reactProject = vscode.commands.registerCommand(
     "vsus.createReactProject",
     () => {
@@ -29,7 +31,27 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  context.subscriptions.push(cppProject,reactProject);
+  const djangoProject = vscode.commands.registerCommand(
+    "vsus.createdjangoProject",
+    () => {
+      createProject("django");
+    }
+  );
+
+  const nodeProject = vscode.commands.registerCommand(
+    "vsus.createNodeProject",
+    () => {
+      createProject("node");
+    }
+  );
+
+  context.subscriptions.push(
+    cppProject,
+    nodeProject,
+    cProject,
+    reactProject,
+    djangoProject
+  );
 }
 
 export function deactivate() {}
