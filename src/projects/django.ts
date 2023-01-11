@@ -20,7 +20,7 @@ export const createReactProject = async (destination: string) => {
       const term = vscode.window.createTerminal();
       term.show();
       term.sendText(`cd ${destination}`);
-      term.sendText(`django-admin startproject ${projectName}`);
+      term.sendText(`django-admin startproject ${projectName} .`);
       setTimeout(() => vscode.window.showInformationMessage('Django project create successfully'), 3000);
     } else {
       vscode.window.showInformationMessage('ERROR: project name. Failed to create project');
