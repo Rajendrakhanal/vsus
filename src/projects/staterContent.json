@@ -6,9 +6,10 @@
         "name": "main.cpp",
         "parent": "src",
         "content": [
-          "#include <stdio.h>\n",
+          "#include <iostream>\n",
+          "using namespace std;\n\n",
           "int main()\n{",
-          "\n",
+          "\n\t",
           "\n\treturn 0;\n",
           "}"
         ]
