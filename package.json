@@ -20,8 +20,8 @@
         "title": "Hello World"
       },
       {
-        "command": "vsus.createCPPProject",
-        "title": "Create Project: C++"
+        "command": "vsus.createCProject",
+        "title": "Create Project: C"
       }
     ]
   },

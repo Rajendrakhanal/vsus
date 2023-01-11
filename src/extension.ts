@@ -10,14 +10,14 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(disposable);
 
-  const cppProject = vscode.commands.registerCommand(
-    "vsus.createCPPProject",
+  const cProject = vscode.commands.registerCommand(
+    "vsus.createCProject",
     () => {
-      createProject("cpp");
+      createProject("c");
     }
   );
 
-  context.subscriptions.push(cppProject);
+  context.subscriptions.push(cProject);
 }
 
 export function deactivate() {}

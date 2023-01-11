@@ -39,5 +39,46 @@
         ]
       }
     ]
+  },
+    "c": {
+    "dir": [".vscode", "bin", "include", "lib", "src"],
+    "files": [
+      {
+        "name": "main.c",
+        "parent": "src",
+        "content": [
+          "#include <iostream>\n",
+          "using namespace std;\n\n",
+          "int main()\n{",
+          "\n\t",
+          "\n\treturn 0;\n",
+          "}"
+        ]
+      },
+      {
+        "name": "Makefile",
+        "content": [
+          "CC\t\t:= g++\n",
+          "C_FLAGS := -std=c++17 -Wall -Wextra\n\n",
+          "BIN\t\t:= bin\n",
+          "SRC\t\t:= src\n",
+          "INCLUDE\t:= include\n",
+          "LIB\t\t:= lib\n\n",
+          "LIBRARIES\t:=\n\n",
+          "ifeq ($(OS),Windows_NT)\n",
+          "EXECUTABLE\t:= main.exe\n",
+          "else\n",
+          "EXECUTABLE\t:= main\n",
+          "endif\n\n",
+          "all: $(BIN)/$(EXECUTABLE)\n\n",
+          "clean:\n",
+          "\t$(RM) $(BIN)/$(EXECUTABLE)\n\n",
+          "run: all\n",
+          "\t./$(BIN)/$(EXECUTABLE)\n\n",
+          "$(BIN)/$(EXECUTABLE): $(SRC)/*\n",
+          "\t$(CC) $(C_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)"
+        ]
+      }
+    ]
   }
 }
