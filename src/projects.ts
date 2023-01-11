@@ -8,11 +8,11 @@ import { reactProject } from "./projects/react";
 import { cppProject } from "./projects/cpp";
 import { nodeProject } from "./projects/node";
 import { djangoProject } from "./projects/django";
+import { cProject } from "./projects/c";
 
 export async function createProject(fileType: string) {
   const folderName = await openDialogBox();
 
-  console.log(folderName);
   if (folderName && folderName.fsPath) {
     switch (fileType) {
       case "c":   
