@@ -41,6 +41,26 @@
     ]
   },
 
+  "c": {
+    "dir": [".vscode", "bin", "include", "lib", "src"],
+    "files": [
+      {
+        "name": "main.c",
+        "parent": "src",
+        "content": [
+          "#include <stdio.h>\n",
+          "int main()\n{",
+          "\n\t",
+          "\n\treturn 0;\n",
+          "}"
+        ]
+      },
+      {
+        "name": "Makefile",
+        "content": []
+      }
+    ]
+  },
   "node": {
     "dir": ["middlewares", "modules", "routes", "services"],
     "files": [

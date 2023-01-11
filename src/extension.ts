@@ -10,12 +10,27 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(disposable);
 
+  const cProject = vscode.commands.registerCommand(
+    "vsus.createCProject",
+    () => {
+      createProject("c");
+    }
+  );
+  
+  const reactProject = vscode.commands.registerCommand(
+    "vsus.createReactProject",
+    () => {
+      createProject("react");
+    }
+  );
+  
   const djangoProject = vscode.commands.registerCommand(
     "vsus.createdjangoProject",
     () => {
       createProject("django");
     }
   );
+  
   const nodeProject = vscode.commands.registerCommand(
     "vsus.createNodeProject",
     () => {
@@ -25,6 +40,8 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(cppProject, nodeProject);
   context.subscriptions.push(djangoProject);
+
+  context.subscriptions.push(reactProject);
 
 }
 

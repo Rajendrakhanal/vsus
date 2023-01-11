@@ -20,9 +20,18 @@
         "title": "Hello World"
       },
       {
+        "command": "vsus.createCProject",
+        "title": "Create Project: C"
+      },
+      {
         "command": "vsus.createCPPProject",
         "title": "Create Project: C++"
       },
+      {
+        "command": "vsus.createReactProject",
+        "title": "Create Project: React"
+      }
+      ,
       {
         "command": "vsus.createNodeProject",
         "title": "Create Project: NodeJS"
