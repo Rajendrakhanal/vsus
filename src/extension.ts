@@ -1,25 +1,17 @@
 import * as vscode from "vscode";
+import { createProject } from "./projects";
+
 
 import boilerplatecode from "./json/boilerplatecode.json";
+
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
 
-  /**
-   * * Creating and Registering the command
-   */
-  const helloWorld = vscode.commands.registerCommand("vsus.welcome", () => {
-    vscode.window.showInformationMessage("Welcome to VSUS");
-
-    console.log(boilerplatecode);
+  let helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
+    vscode.window.showInformationMessage("Hello World from VSUS!");
   });
 
-  /**
-   * TODO: Auto Completion of Boiler Plate Code
-   * @Rajendra
-   * @Ujjwal
-   * @Saurav
-   */
   const C = vscode.languages.registerCompletionItemProvider("c", {
     provideCompletionItems(
       document: vscode.TextDocument,
@@ -103,11 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
       // return all completion items as array
       return [snippetCompletion];
     },
-  });
-  /**
-   * TODO: Notification Sample
-   * @Susheel
-   */
+
   const showInfoNotification = vscode.commands.registerCommand(
     "vsus.showInfoNotification",
     () => {
@@ -127,11 +115,53 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+
+  const cProject = vscode.commands.registerCommand(
+    "vsus.createCProject",
+    () => {
+      createProject("c");
+    }
+  );
+
+  const cppProject = vscode.commands.registerCommand(
+    "vsus.createCPPProject",
+    () => {
+      createProject("cpp");
+    }
+  );
+
+  const reactProject = vscode.commands.registerCommand(
+    "vsus.createReactProject",
+    () => {
+      createProject("react");
+    }
+  );
+
+  const djangoProject = vscode.commands.registerCommand(
+    "vsus.createdjangoProject",
+    () => {
+      createProject("django");
+    }
+  );
+
+  const nodeProject = vscode.commands.registerCommand(
+    "vsus.createNodeProject",
+    () => {
+      createProject("node");
+    }
+  );
+
   context.subscriptions.push(
+    cppProject,
+    nodeProject,
+    cProject,
+    reactProject,
+    djangoProject,
     helloWorld,
     showErrorNotification,
     showInfoNotification,
     showWarningNotification
+
   );
 }
 
