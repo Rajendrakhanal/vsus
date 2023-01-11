@@ -1,0 +1,165 @@
+{
+  "Author_and_program_detail": {
+    "prefix": "author",
+    "body": [
+      "/**\n",
+      " *\t @author: ${1:Anonyms}",
+      " *\t @desc: ${2:description}",
+      " *\t @time: ${3:$CURRENT_DAY_NAME $CURRENT_DATE-$CURRENT_MONTH_NAME-$CURRENT_YEAR $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}",
+      " \n**/\n"
+    ],
+    "description": "simple c++ file structure"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": "cout << \"$1\" << endl;\n$0",
+    "description": "cout statement"
+  },
+  "cin": {
+    "prefix": "cin",
+    "body": "cin >> $1 ;\n$0",
+    "description": "cout statement"
+  },
+  "comment": {
+    "prefix": "/",
+    "body": "/* $1 */$0",
+    "description": "multiline comment in C++"
+  },
+  "if": {
+    "prefix": "if-else",
+    "body": [
+      "if ( ${1:condition} ){",
+      "\t$2",
+      "}\n"
+    ],
+    "description": "if statement which runs given condition is true"
+  },
+  "if-else": {
+    "prefix": "if-else",
+    "body": [
+      "if ( ${1:condition} ){",
+      "\t$2",
+      "}",
+      "else ( ${3:condition} ){",
+      "\t$4",
+      "}\n"
+    ],
+    "description": "if condition is true if block runs otherwise else block runs"
+  },
+  "if-elseif-else": {
+    "prefix": "if-elseif-else",
+    "body": [
+      "if ( ${1:condition1} ){",
+      "\t$2",
+      "}",
+      "else if ( ${3:condition2} ){",
+      "\t$4",
+      "}",
+      "else ( ${5:condition} ){",
+      "\t$6",
+      "}\n"
+    ],
+    "description": "For multiple condition, you can use this if-elseif-else "
+  },
+  "switch-case": {
+    "prefix": "switch-case",
+    "body": [
+      "switch ( ${1:variable_name} ){\n",
+      "\tcase ${2:val} :",
+      "\t\t$3",
+      "\t\tbreak;",
+      "}",
+      "\tcase ${4:val} :",
+      "\t\t$5",
+      "\t\tbreak;",
+      "}",
+      "\tcase ${6:val} :",
+      "\t\t$7",
+      "\t\tbreak;",
+      "}",
+      "\tdefault :",
+      "\t\t$8",
+      "\t\tbreak;",
+      "}\n"
+    ],
+    "description": "for different cases, we use this switch statement"
+  },
+  "while_loop": {
+    "prefix": "while",
+    "body": [
+      "while ( ${1:condition} ){",
+      "\t$2",
+      "}\n"
+    ],
+    "description": "Run a block of code while the condition is true"
+  },
+  "do_while_loop": {
+    "prefix": "do-while",
+    "body": [
+      "do {",
+      "\t${2:statement}",
+      "}  while ( ${1:condition} ) ;\n"
+    ],
+    "description": "First executes once and then check while condition to run again"
+  },
+  "function": {
+    "prefix": "function",
+    "body": [
+      "${1:return_type} ${2:fn_name} ( ${3:params} ){",
+      "\t$4\n",
+      "\t$5",
+      "}\n$0"
+    ],
+    "description": "Takes some argument, does its task and returns something"
+  },
+  "for_loop": {
+    "prefix": "for-loop",
+    "body": [
+      "for( ${1:int} ${2:i} = ${3:0} ; ${2:i} < ${4:n} ; ${2: i}++ ){",
+      "\t$5",
+      "}\n$0"
+    ],
+    "description": "Repeats a block of code till it reaches the given end condition"
+  },
+  "ternary_operator( Exp1 ? Exp2 : Exp3)": {
+    "prefix": "ternary",
+    "body": [
+      "${1:exp1} ? ${2:exp2} : ${3:exp3}$0"
+    ],
+    "description": "If condition(exp1) is true then runs exp2 else runs exp3"
+  },
+  "struct (User Defined Data Type)": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:struct_name}  ",
+      "{",
+      "\t${2:// struct members}",
+      "}$3;",
+      "$0"
+    ],
+    "description": "Creates your user defined data type"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:class_name}",
+      "{",
+      "private:",
+      "\t${2:data}",
+      "public:",
+      "\t${1:studnet}( ${3:args} );",
+      "\t~${1:class_name}();",
+      "};",
+      "",
+      "${1:class_name}::${1:class_name}( ${3:args} )",
+      "{",
+      "}",
+      "",
+      "${1:class_name}::~${1:class_name}()",
+      "{",
+      "}",
+      "$0"
+    ],
+    "description": "Create your own user defined datatype using class"
+  }
+}

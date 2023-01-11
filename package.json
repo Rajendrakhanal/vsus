@@ -31,6 +31,16 @@
         "command": "vsus.showErrorNotification",
         "title": "Error Notification"
       }
+    ],
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./src/json/snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./src/json/snippets/cpp.json"
+      }
     ]
   },
   "scripts": {
