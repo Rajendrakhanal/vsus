@@ -13,5 +13,23 @@ export namespace reactProject {
         return "Error project name.";
       },
     });
+
+    if (projectName !== undefined) {
+      const term = vscode.window.createTerminal();
+      term.show();
+      term.sendText(`cd ${destination}`);
+      term.sendText(`npx create-react-app ${projectName}`);
+      setTimeout(
+        () =>
+          vscode.window.showInformationMessage(
+            "React project create successfully"
+          ),
+        8000
+      );
+    } else {
+      vscode.window.showInformationMessage(
+        "ERROR: project name. Failed to create project"
+      );
+    }
   };
 }
