@@ -7,8 +7,6 @@ export async function askVSUS(question: string) {
       apiKey: "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",
     });
 
-    console.log("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");
-
     const openai = new OpenAIApi(configuration);
 
     const response = await openai.createCompletion({
@@ -19,7 +17,6 @@ export async function askVSUS(question: string) {
     });
 
     if (response.status === 200) {
-      console.log(response.data.choices[0].text);
       return response.data.choices[0].text;
     }
   } catch (error: any) {
