@@ -130,94 +130,57 @@ function getWebviewContent(question: string, response: string) {
   return `
   <!DOCTYPE html>
   <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>AVUS</title>
-      <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        body {
-          background-color: black;
-          margin: 20px;
-          height: 100vh;
-        }
   
-        #question {
-          /* margin: 10px; */
-          width: 100%;
-          height: fit-content;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVUS</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
   
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          flex-grow: 1;
-          flex-shrink: 1;
+      body {
+        background-color: black;
+        margin: 20px;
+        height: 100vh;
+        font-family: sans-serif;
+      }
   
-          border-bottom: #ccc 4px solid;
-        }
+      #question {
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 1rem ;
+        border-bottom: rgb(17, 0, 253) 4px solid;
+        font-size: 1.5rem;
+        text-align: center;
+        color: aliceblue;
+        overflow-wrap: break-word;
+      }
   
-        #question-input {
-          margin: 10px;
-          margin-top: 20px;
-          padding: 2px;
-          font-size: 1.15rem;
-          width: 80%;
+      #response {
+        color: aliceblue;
+        margin-top: 20px;
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        overflow-wrap: break-word;
+      }
+    </style>
+  </head>
   
-          border-radius: 5px;
-          border: 0;
+  <body>
+    <div id="question" type="text">
+      ${question}
+    </div>
+    <div id="response">
+      ${response}
+    </div>
   
-          box-shadow: 0 0 0 4px aliceblue;
-        }
+  </body>
   
-        #question-input:focus {
-          outline: orange solid 3px;
-        }
-  
-        .btn {
-          margin: 12px;
-          padding: 8px;
-          font-size: 1.25rem;
-          width: 10rem;
-          border: 0;
-          border-radius: 2rem;
-          cursor: pointer;
-        }
-  
-        .btn-primary {
-          font-weight: 500;
-          background-color: rgb(7, 144, 255);
-          color: white;
-          letter-spacing: 1.5px;
-        }
-  
-        #response {
-          color: aliceblue;
-          margin-top: 20px;
-          letter-spacing: 1px;
-        }
-      </style>
-    </head>
-    <body>
-      <div id="question">
-        <input
-          id="question-input"
-          type="text"
-          autofocus
-          placeholder="${question}"
-        />
-      </div>
-  
-      <div id="response">
-        ${response}
-      </div>
-
-    </body>
   </html>
 `;
 }
