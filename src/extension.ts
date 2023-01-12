@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
+import { askVSUS } from "./utils/askVSUS";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -12,18 +13,25 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("askVSUS.start", () => {
-      const panel = vscode.window.createWebviewPanel(
-        "AskVsus", // Identifies the type of the webview. Used internally
-        "AskVsus", // Title of the panel displayed to the user
-        vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-        {} // Webview options. More on these later.
-      );
-      // And set its HTML content
-     panel.webview.html = getWebviewContent();
+    vscode.commands.registerCommand("askVSUS.start", async () => {
+      const question = await vscode.window.showInputBox({
+        ignoreFocusOut: true,
+        placeHolder: "Enter your question...",
+        prompt: "Question",
+      });
+      if (question !== undefined) {
+        const response = await askVSUS(question);
+        const panel = vscode.window.createWebviewPanel(
+          "AskVsus", // Identifies the type of the webview. Used internally
+          "AskVsus", // Title of the panel displayed to the user
+          vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+          {} // Webview options. More on these later.
+        );
+        // And set its HTML content
+        panel.webview.html = getWebviewContent(question, response);
+      }
     })
   );
-
 
   const c = getLanguageCompletion("c");
   const cpp = getLanguageCompletion("cpp");
@@ -118,23 +126,98 @@ const getLanguageCompletion = (
 
 export function deactivate() {}
 
+function getWebviewContent(question: string, response: string) {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>AVUS</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background-color: black;
+          margin: 20px;
+          height: 100vh;
+        }
+  
+        #question {
+          /* margin: 10px; */
+          width: 100%;
+          height: fit-content;
+  
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          flex-grow: 1;
+          flex-shrink: 1;
+  
+          border-bottom: #ccc 4px solid;
+        }
+  
+        #question-input {
+          margin: 10px;
+          margin-top: 20px;
+          padding: 2px;
+          font-size: 1.15rem;
+          width: 80%;
+  
+          border-radius: 5px;
+          border: 0;
+  
+          box-shadow: 0 0 0 4px aliceblue;
+        }
+  
+        #question-input:focus {
+          outline: orange solid 3px;
+        }
+  
+        .btn {
+          margin: 12px;
+          padding: 8px;
+          font-size: 1.25rem;
+          width: 10rem;
+          border: 0;
+          border-radius: 2rem;
+          cursor: pointer;
+        }
+  
+        .btn-primary {
+          font-weight: 500;
+          background-color: rgb(7, 144, 255);
+          color: white;
+          letter-spacing: 1.5px;
+        }
+  
+        #response {
+          color: aliceblue;
+          margin-top: 20px;
+          letter-spacing: 1px;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="question">
+        <input
+          id="question-input"
+          type="text"
+          autofocus
+          placeholder="${question}"
+        />
+      </div>
+  
+      <div id="response">
+        ${response}
+      </div>
 
-function getWebviewContent() {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./media/askVSUS.css" />
-    <title>AskVSUS</title>
-</head>
-<body>
-<form>
-<label for="fname" style="font-size: large">QUESTION :</label><br>
-<br><textarea rows="8" type="text" id="qn" name="fname" style="width:55%; background:rgb(0, 0, 0); color: white; font-size: large"></textarea><br>
-<label for="lname">Output:</label>
-<br><input type="text" id="ans" name="lname">
-</form>
-</body>
-</html>`;
+    </body>
+  </html>
+`;
 }
