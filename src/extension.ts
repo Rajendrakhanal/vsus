@@ -56,6 +56,35 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
+  registerProjectBoilerPlateCode(context);
+
+  context.subscriptions.push(
+    helloWorld,
+    showErrorNotification,
+    showInfoNotification,
+    showWarningNotification
+  );
+}
+
+const getLanguageCompletion = (
+  language: "c" | "cpp" | "java" | "csharp" | "go"
+): vscode.Disposable => {
+  return vscode.languages.registerCompletionItemProvider(language, {
+    provideCompletionItems() {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode[language].prefix
+      );
+
+      let body = boilerplatecode[language].body.join("");
+
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+
+      return [snippetCompletion];
+    },
+  });
+};
+
+function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
   const cProject = vscode.commands.registerCommand(
     "vsus.createCProject",
     () => {
@@ -96,31 +125,9 @@ export function activate(context: vscode.ExtensionContext) {
     nodeProject,
     cProject,
     reactProject,
-    djangoProject,
-    helloWorld,
-    showErrorNotification,
-    showInfoNotification,
-    showWarningNotification
+    djangoProject
   );
 }
-
-const getLanguageCompletion = (
-  language: "c" | "cpp" | "java" | "csharp" | "go"
-): vscode.Disposable => {
-  return vscode.languages.registerCompletionItemProvider(language, {
-    provideCompletionItems() {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode[language].prefix
-      );
-
-      let body = boilerplatecode[language].body.join("");
-
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-
-      return [snippetCompletion];
-    },
-  });
-};
 
 export function deactivate() {}
 
