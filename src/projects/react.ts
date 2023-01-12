@@ -1,5 +1,8 @@
 import * as vscode from "vscode";
+
+import { Terminal } from "../utils/terminal";
 import { showInputBox } from "../utils/showInputBox";
+
 export namespace reactProject {
   export const createReactProject = async (destination: string) => {
     const projectName = await showInputBox(
@@ -8,10 +11,12 @@ export namespace reactProject {
     );
 
     if (projectName !== undefined) {
-      const term = vscode.window.createTerminal();
-      term.show();
-      term.sendText(`cd ${destination}`);
-      term.sendText(`npx create-react-app ${projectName}`);
+      const reactTerminal = new Terminal();
+
+      reactTerminal.toggleVisibility();
+      reactTerminal.runCommand(`cd ${destination}`);
+      reactTerminal.runCommand(`npx create-react-app ${projectName}`);
+
       setTimeout(
         () =>
           vscode.window.showInformationMessage(

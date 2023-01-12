@@ -1,4 +1,6 @@
 import * as vscode from "vscode";
+
+import { Terminal } from "../utils/terminal";
 import { showInputBox } from "../utils/showInputBox";
 
 export namespace djangoProject {
@@ -9,10 +11,12 @@ export namespace djangoProject {
     );
 
     if (projectName !== undefined) {
-      const term = vscode.window.createTerminal();
-      term.show();
-      term.sendText(`cd ${destination}`);
-      term.sendText(`django-admin startproject ${projectName} .`);
+      const djangoTerminal = new Terminal();
+
+      djangoTerminal.toggleVisibility();
+      djangoTerminal.runCommand(`cd ${destination}`);
+      djangoTerminal.runCommand(`django-admin startproject ${projectName} .`);
+
       setTimeout(
         () =>
           vscode.window.showInformationMessage(
