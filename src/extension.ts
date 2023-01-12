@@ -31,11 +31,11 @@ export function activate(context: vscode.ExtensionContext) {
     })
   );
 
-  const c = getLanguageCompletion("c");
-  const cpp = getLanguageCompletion("cpp");
-  const java = getLanguageCompletion("java");
-  const go = getLanguageCompletion("go");
-  const csharp = getLanguageCompletion("csharp");
+  getLanguageCompletion("c");
+  getLanguageCompletion("cpp");
+  getLanguageCompletion("java");
+  getLanguageCompletion("go");
+  getLanguageCompletion("csharp");
 
   registerProjectBoilerPlateCode(context);
   registerNotification(context);
@@ -43,9 +43,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(helloWorld);
 }
 
-const getLanguageCompletion = (
+function getLanguageCompletion(
   language: "c" | "cpp" | "java" | "csharp" | "go"
-): vscode.Disposable => {
+): vscode.Disposable {
   return vscode.languages.registerCompletionItemProvider(language, {
     provideCompletionItems() {
       const snippetCompletion = new vscode.CompletionItem(
@@ -59,7 +59,7 @@ const getLanguageCompletion = (
       return [snippetCompletion];
     },
   });
-};
+}
 
 function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
   const cProject = vscode.commands.registerCommand(
