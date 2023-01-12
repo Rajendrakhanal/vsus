@@ -3,6 +3,7 @@ import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
 import { askVSUS } from "./utils/askVSUS";
+import { showInputBox } from "./utils/showInputBox";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -14,11 +15,8 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand("askVSUS.start", async () => {
-      const question = await vscode.window.showInputBox({
-        ignoreFocusOut: true,
-        placeHolder: "Enter your question...",
-        prompt: "Question",
-      });
+      const question = await showInputBox("Enter your question...", "Question");
+
       if (question !== undefined) {
         const response = await askVSUS(question);
         const panel = vscode.window.createWebviewPanel(
