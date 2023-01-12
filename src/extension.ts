@@ -37,33 +37,10 @@ export function activate(context: vscode.ExtensionContext) {
   const go = getLanguageCompletion("go");
   const csharp = getLanguageCompletion("csharp");
 
-  const showInfoNotification = vscode.commands.registerCommand(
-    "vsus.showInfoNotification",
-    () => {
-      vscode.window.showInformationMessage("Information from VSUS");
-    }
-  );
-  const showWarningNotification = vscode.commands.registerCommand(
-    "vsus.showWarningNotification",
-    () => {
-      vscode.window.showWarningMessage("Warning from VSUS");
-    }
-  );
-  const showErrorNotification = vscode.commands.registerCommand(
-    "vsus.showErrorNotification",
-    () => {
-      vscode.window.showErrorMessage("Error from VSUS");
-    }
-  );
-
   registerProjectBoilerPlateCode(context);
+  registerNotification(context);
 
-  context.subscriptions.push(
-    helloWorld,
-    showErrorNotification,
-    showInfoNotification,
-    showWarningNotification
-  );
+  context.subscriptions.push(helloWorld);
 }
 
 const getLanguageCompletion = (
@@ -126,6 +103,33 @@ function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
     cProject,
     reactProject,
     djangoProject
+  );
+}
+
+function registerNotification(context: vscode.ExtensionContext) {
+  const showInfoNotification = vscode.commands.registerCommand(
+    "vsus.showInfoNotification",
+    () => {
+      vscode.window.showInformationMessage("Information from VSUS");
+    }
+  );
+  const showWarningNotification = vscode.commands.registerCommand(
+    "vsus.showWarningNotification",
+    () => {
+      vscode.window.showWarningMessage("Warning from VSUS");
+    }
+  );
+  const showErrorNotification = vscode.commands.registerCommand(
+    "vsus.showErrorNotification",
+    () => {
+      vscode.window.showErrorMessage("Error from VSUS");
+    }
+  );
+
+  context.subscriptions.push(
+    showErrorNotification,
+    showInfoNotification,
+    showWarningNotification
   );
 }
 
