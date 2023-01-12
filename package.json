@@ -50,7 +50,11 @@
       {
         "command": "vsus.createdjangoProject",
         "title": "Create Project: django"
-      }
+      },
+      {
+				"command": "askVSUS.start",
+				"title": "AskVSUS"
+			}
     ],
     "snippets": [
       {
