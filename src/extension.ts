@@ -31,34 +31,19 @@ export function activate(context: vscode.ExtensionContext) {
     })
   );
 
-  getLanguageCompletion("c");
-  getLanguageCompletion("cpp");
-  getLanguageCompletion("java");
-  getLanguageCompletion("go");
-  getLanguageCompletion("csharp");
-
+  registerLanguageCompletion();
   registerProjectBoilerPlateCode(context);
   registerNotification(context);
 
   context.subscriptions.push(helloWorld);
 }
 
-function getLanguageCompletion(
-  language: "c" | "cpp" | "java" | "csharp" | "go"
-): vscode.Disposable {
-  return vscode.languages.registerCompletionItemProvider(language, {
-    provideCompletionItems() {
-      const snippetCompletion = new vscode.CompletionItem(
-        boilerplatecode[language].prefix
-      );
-
-      let body = boilerplatecode[language].body.join("");
-
-      snippetCompletion.insertText = new vscode.SnippetString(body);
-
-      return [snippetCompletion];
-    },
-  });
+function registerLanguageCompletion() {
+  getLanguageCompletion("c");
+  getLanguageCompletion("cpp");
+  getLanguageCompletion("java");
+  getLanguageCompletion("go");
+  getLanguageCompletion("csharp");
 }
 
 function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
@@ -229,4 +214,22 @@ function getWebviewContent(question: string, response: string) {
     </body>
   </html>
 `;
+}
+
+function getLanguageCompletion(
+  language: "c" | "cpp" | "java" | "csharp" | "go"
+): vscode.Disposable {
+  return vscode.languages.registerCompletionItemProvider(language, {
+    provideCompletionItems() {
+      const snippetCompletion = new vscode.CompletionItem(
+        boilerplatecode[language].prefix
+      );
+
+      let body = boilerplatecode[language].body.join("");
+
+      snippetCompletion.insertText = new vscode.SnippetString(body);
+
+      return [snippetCompletion];
+    },
+  });
 }
