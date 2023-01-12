@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
         {} // Webview options. More on these later.
       );
       // And set its HTML content
-     // panel.webview.html = getWebviewContent();
+     panel.webview.html = getWebviewContent();
     })
   );
 
@@ -117,3 +117,24 @@ const getLanguageCompletion = (
 };
 
 export function deactivate() {}
+
+
+function getWebviewContent() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./media/askVSUS.css" />
+    <title>AskVSUS</title>
+</head>
+<body>
+<form>
+<label for="fname" style="font-size: large">QUESTION :</label><br>
+<br><textarea rows="8" type="text" id="qn" name="fname" style="width:55%; background:rgb(0, 0, 0); color: white; font-size: large"></textarea><br>
+<label for="lname">Output:</label>
+<br><input type="text" id="ans" name="lname">
+</form>
+</body>
+</html>`;
+}
