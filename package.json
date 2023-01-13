@@ -140,6 +140,10 @@
       {
         "language": "javascriptreact",
         "path": "./src/json/snippets/javascript/react.json"
+      },
+      {
+        "language": "python",
+        "path": "./src/json/snippets/python/python.json"
       }
     ]
   },
