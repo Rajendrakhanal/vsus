@@ -58,7 +58,7 @@ export class AVSUS extends WebViewPanel {
     }
     
     #vsus {
-      margin: 0 10px;
+      margin: 20px 10px;
       padding: 16px;
       min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -67,7 +67,7 @@ export class AVSUS extends WebViewPanel {
     }
     .vsus_div{
         background-color: rgb(69, 82, 197);
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 5px;
        box-shadow: -5px 3px 12px 4px #A599E9;
     -webkit-box-shadow: -5px 3px 12px 4px #A599E9;
