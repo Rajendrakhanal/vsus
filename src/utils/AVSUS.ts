@@ -47,48 +47,68 @@ export class AVSUS extends WebViewPanel {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>AVUS</title>
       <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     
-        body {
-          background-color: black;
-          margin: 20px;
-          height: 100vh;
-          font-family: sans-serif;
-        }
+    body {
+        background-color:  #2D2B55;
+    }
     
-        #question {
-          width: 100%;
-          height: fit-content;
-          padding-bottom: 1rem ;
-          border-bottom: rgb(17, 0, 253) 4px solid;
-          font-size: 1.5rem;
-          text-align: center;
-          color: aliceblue;
-          overflow-wrap: break-word;
-        }
+    #vsus {
+      margin: 0 10px;
+      padding: 16px;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     
-        #response {
-          color: aliceblue;
-          margin-top: 20px;
-          letter-spacing: 1px;
-          font-size: 1.25rem;
-          overflow-wrap: break-word;
-        }
+    }
+    .vsus_div{
+        background-color: rgb(69, 82, 197);
+        padding: 1rem;
+        border-radius: 5px;
+       box-shadow: -5px 3px 12px 4px #A599E9;
+    -webkit-box-shadow: -5px 3px 12px 4px #A599E9;
+    -moz-box-shadow: -5px 3px 12px 4px #A599E9;
+    }
+    
+    #question {
+      margin: 2px;
+      color: white;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    
+    #question::after {
+      content: "";
+      display: block;
+      margin-top: 5px;
+      border: white solid 2px;
+    }
+    
+    #answer {
+      margin-top: 16px;
+      color: white;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      line-height: 1.3rem;
+    }
+    
       </style>
     </head>
     
     <body>
-      <div id="question" type="text">
-        ${question}
-      </div>
-      <div id="response">
-        ${response}
-      </div>
-    
+    <div id="vsus">
+    <div class="vsus_div">
+    <div id="question">${question}
+    </div>
+    <div id="answer">
+    ${response}
+    </div>
+    </div>
+  </div>
     </body>
     
     </html>
