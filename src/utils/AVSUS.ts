@@ -1,16 +1,18 @@
-import { report } from "process";
-import * as vscode from "vscode";
-import { WebViewPanel } from "./abstract/webViewPanel";
+import { WebViewPanel } from "../components/abstract/webViewPanel";
+import { askOpenAI } from "../utils/askOpenAI";
+import { showInputBox } from "./showInputBox";
 
-export class AskVSUSWebPanel extends WebViewPanel {
+export class AVSUS extends WebViewPanel {
   viewPanelHTML: string;
+  private question: string | undefined;
+  private answer: string | undefined;
 
   public constructor() {
     super("Ask VSUS", "AskVSUS");
     this.viewPanelHTML = this.getWebviewContent("", "");
   }
 
-  public setWebViewPanelHTMLContent(data: string[]): void {
+  setWebViewPanelHTMLContent(data: (string | undefined)[]): void {
     this.viewPanelHTML = this.getWebviewContent(data[0], data[1]);
   }
 
@@ -18,7 +20,23 @@ export class AskVSUSWebPanel extends WebViewPanel {
     this.viewPanelInstance.webview.html = this.viewPanelHTML;
   }
 
-  private getWebviewContent(question: string, response: string): string {
+  public async askQuestion() {
+    this.question = await showInputBox("Enter your question...", "Question");
+    if (typeof this.question === undefined) {
+      this.answer = "Invalid Question";
+    } else {
+      this.answer = await askOpenAI(this.question);
+      console.log(this.answer);
+    }
+
+    this.setWebViewPanelHTMLContent([this.question, this.answer]);
+    return this.answer;
+  }
+
+  private getWebviewContent(
+    question: string | undefined,
+    response: string | undefined
+  ): string {
     return `
     <!DOCTYPE html>
     <html lang="en">
