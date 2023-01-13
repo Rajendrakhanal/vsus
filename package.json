@@ -28,8 +28,8 @@
         "title": "Error Notification"
       },
       {
-        "command": "vsus.helloWorld",
-        "title": "Hello World"
+        "command": "vsus.startup",
+        "title": "VSUS"
       },
       {
         "command": "vsus.createCProject",
