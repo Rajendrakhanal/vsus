@@ -6,7 +6,7 @@ const { Configuration, OpenAIApi } = require("openai");
 export async function askOpenAI(question: string | undefined) {
   try {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: "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",
     });
 
     const openai = new OpenAIApi(configuration);
