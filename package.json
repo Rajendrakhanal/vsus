@@ -50,6 +50,10 @@
       {
         "command": "vsus.createdjangoProject",
         "title": "Create Project: django"
+      },
+      {
+        "command": "askVSUS.start",
+        "title": "AskVSUS"
       }
     ],
     "snippets": [
@@ -92,7 +96,9 @@
   },
   "dependencies": {
     "@types/fs-extra": "^11.0.0",
+    "dotenv": "^16.0.3",
     "fs-extra": "^11.1.0",
+    "openai": "^3.1.0",
     "path": "^0.12.7"
   }
 }

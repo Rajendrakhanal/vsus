@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
+import { AVSUS } from "./utils/AVSUS";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -11,31 +12,31 @@ export function activate(context: vscode.ExtensionContext) {
     console.log(vscode.window.activeTextEditor?.document.fileName);
   });
 
-  const c = getLanguageCompletion("c");
-  const cpp = getLanguageCompletion("cpp");
-  const java = getLanguageCompletion("java");
-  const go = getLanguageCompletion("go");
-  const csharp = getLanguageCompletion("csharp");
+  context.subscriptions.push(
+    vscode.commands.registerCommand("askVSUS.start", async () => {
+      const aVSUS = new AVSUS();
 
-  const showInfoNotification = vscode.commands.registerCommand(
-    "vsus.showInfoNotification",
-    () => {
-      vscode.window.showInformationMessage("Information from VSUS");
-    }
-  );
-  const showWarningNotification = vscode.commands.registerCommand(
-    "vsus.showWarningNotification",
-    () => {
-      vscode.window.showWarningMessage("Warning from VSUS");
-    }
-  );
-  const showErrorNotification = vscode.commands.registerCommand(
-    "vsus.showErrorNotification",
-    () => {
-      vscode.window.showErrorMessage("Error from VSUS");
-    }
+      await aVSUS.askQuestion();
+      aVSUS.showWebView();
+    })
   );
 
+  registerLanguageCompletion();
+  registerProjectBoilerPlateCode(context);
+  registerNotification(context);
+
+  context.subscriptions.push(helloWorld);
+}
+
+function registerLanguageCompletion() {
+  getLanguageCompletion("c");
+  getLanguageCompletion("cpp");
+  getLanguageCompletion("java");
+  getLanguageCompletion("go");
+  getLanguageCompletion("csharp");
+}
+
+function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
   const cProject = vscode.commands.registerCommand(
     "vsus.createCProject",
     () => {
@@ -76,17 +77,42 @@ export function activate(context: vscode.ExtensionContext) {
     nodeProject,
     cProject,
     reactProject,
-    djangoProject,
-    helloWorld,
+    djangoProject
+  );
+}
+
+function registerNotification(context: vscode.ExtensionContext) {
+  const showInfoNotification = vscode.commands.registerCommand(
+    "vsus.showInfoNotification",
+    () => {
+      vscode.window.showInformationMessage("Information from VSUS");
+    }
+  );
+  const showWarningNotification = vscode.commands.registerCommand(
+    "vsus.showWarningNotification",
+    () => {
+      vscode.window.showWarningMessage("Warning from VSUS");
+    }
+  );
+  const showErrorNotification = vscode.commands.registerCommand(
+    "vsus.showErrorNotification",
+    () => {
+      vscode.window.showErrorMessage("Error from VSUS");
+    }
+  );
+
+  context.subscriptions.push(
     showErrorNotification,
     showInfoNotification,
     showWarningNotification
   );
 }
 
-const getLanguageCompletion = (
+export function deactivate() {}
+
+function getLanguageCompletion(
   language: "c" | "cpp" | "java" | "csharp" | "go"
-): vscode.Disposable => {
+): vscode.Disposable {
   return vscode.languages.registerCompletionItemProvider(language, {
     provideCompletionItems() {
       const snippetCompletion = new vscode.CompletionItem(
@@ -100,6 +126,4 @@ const getLanguageCompletion = (
       return [snippetCompletion];
     },
   });
-};
-
-export function deactivate() {}
+}
