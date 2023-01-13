@@ -42,37 +42,31 @@
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+<!--
+* It must be written in point
+* Gif of boiler plate code
+ -->
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open Extensions from the Activity Bar in VS Code. View → Extensions
+2. Search for VSUS
+3. Click Install
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Commands
 
-## Extension Settings
+<!--
+* List of all command and their gif
+ -->
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Authors
 
-For example:
+[Susheel Thapa](https://github.com/SusheelThapa)
 
-This extension contributes the following settings:
+[Rajendra Khanal](https://github.com/Rajendrakhanal)
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+[Saurav Kumar Mahato](https://github.com/SauravKumarMahato)
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-<!-- It will be written soon @Rajendra -->
+[Ujjwal Jha](https://github.com/Ujj1225)
 
 ---
-
-
