@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { getApiKey } from "./getApiKey";
 
 /* eslint-disable @typescript-eslint/naming-convention */
 const { Configuration, OpenAIApi } = require("openai");
@@ -6,7 +7,7 @@ const { Configuration, OpenAIApi } = require("openai");
 export async function askOpenAI(question: string | undefined) {
   try {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: getApiKey(),
     });
 
     const openai = new OpenAIApi(configuration);
