@@ -145,7 +145,18 @@
         "language": "python",
         "path": "./src/json/snippets/python/python.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "AskVSUS",
+      "type": "object",
+      "properties": {
+        "askVSUS.apiKey": {
+          "type": "string",
+          "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
+          "order": 0
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
