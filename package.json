@@ -1,6 +1,7 @@
 {
   "name": "vsus",
   "displayName": "VSUS",
+  "publisher": "VSUS",
   "description": "",
   "version": "0.0.1",
   "engines": {
