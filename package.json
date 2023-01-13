@@ -78,52 +78,8 @@
         "path": "./src/json/snippets/dart.json"
       },
       {
-        "language": "eelixir",
-        "path": "./src/json/snippets/eelixir.json"
-      },
-      {
-        "language": "elixir",
-        "path": "./src/json/snippets/elixir.json"
-      },
-      {
-        "language": "erb",
-        "path": "./src/json/snippets/erb.json"
-      },
-      {
-        "language": "erlang",
-        "path": "./src/json/snippets/erlang.json"
-      },
-      {
-        "language": "fennel",
-        "path": "./src/json/snippets/fennel.json"
-      },
-      {
-        "language": "fortran",
-        "path": "./src/json/snippets/fortran.json"
-      },
-      {
-        "language": "gdscript",
-        "path": "./src/json/snippets/gdscript.json"
-      },
-      {
-        "language": "gitcommit",
-        "path": "./src/json/snippets/gitcommit.json"
-      },
-      {
-        "language": "global",
-        "path": "./src/json/snippets/global.json"
-      },
-      {
-        "language": "glsl",
-        "path": "./src/json/snippets/glsl.json"
-      },
-      {
         "language": "go",
         "path": "./src/json/snippets/go.json"
-      },
-      {
-        "language": "haskell",
-        "path": "./src/json/snippets/haskell.json"
       },
       {
         "language": "html",
@@ -138,72 +94,24 @@
         "path": "./src/json/snippets/julia.json"
       },
       {
-        "language": "kotlin",
-        "path": "./src/json/snippets/kotlin.json"
-      },
-      {
-        "language": "kubernetes",
-        "path": "./src/json/snippets/kubernetes.json"
-      },
-      {
         "language": "latex",
         "path": "./src/json/snippets/latex.json"
-      },
-      {
-        "language": "liquid",
-        "path": "./src/json/snippets/liquid.json"
       },
       {
         "language": "lua",
         "path": "./src/json/snippets/lua.json"
       },
       {
-        "language": "make",
-        "path": "./src/json/snippets/make.json"
-      },
-      {
         "language": "markdown",
         "path": "./src/json/snippets/markdown.json"
-      },
-      {
-        "language": "mint",
-        "path": "./src/json/snippets/mint.json"
-      },
-      {
-        "language": "norg",
-        "path": "./src/json/snippets/norg.json"
-      },
-      {
-        "language": "objc",
-        "path": "./src/json/snippets/objc.json"
-      },
-      {
-        "language": "org",
-        "path": "./src/json/snippets/org.json"
       },
       {
         "language": "php",
         "path": "./src/json/snippets/php.json"
       },
       {
-        "language": "plantuml",
-        "path": "./src/json/snippets/plantuml.json"
-      },
-      {
-        "language": "quarto",
-        "path": "./src/json/snippets/quarto.json"
-      },
-      {
         "language": "r",
         "path": "./src/json/snippets/r.json"
-      },
-      {
-        "language": "rescript",
-        "path": "./src/json/snippets/rescript.json"
-      },
-      {
-        "language": "rmarkdown",
-        "path": "./src/json/snippets/rmarkdown.json"
       },
       {
         "language": "ruby",
@@ -214,36 +122,24 @@
         "path": "./src/json/snippets/rust.json"
       },
       {
-        "language": "scala",
-        "path": "./src/json/snippets/scala.json"
-      },
-      {
-        "language": "shell",
-        "path": "./src/json/snippets/shell.json"
-      },
-      {
-        "language": "solidity",
-        "path": "./src/json/snippets/solidity.json"
-      },
-      {
         "language": "sql",
         "path": "./src/json/snippets/sql.json"
-      },
-      {
-        "language": "svelte",
-        "path": "./src/json/snippets/svelte.json"
       },
       {
         "language": "swift",
         "path": "./src/json/snippets/swift.json"
       },
       {
-        "language": "systemverilog",
-        "path": "./src/json/snippets/systemverilog.json"
+        "language": "javascript",
+        "path": "./src/json/snippets/javascript/javascript.json"
       },
       {
-        "language": "verilog",
-        "path": "./src/json/snippets/verilog.json"
+        "language": "typescript",
+        "path": "./src/json/snippets/javascript/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./src/json/snippets/javascript/react.json"
       }
     ]
   },
