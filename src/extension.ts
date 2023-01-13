@@ -4,6 +4,7 @@ import { createProject } from "./projects";
 import boilerplatecode from "./json/boilerplatecode.json";
 import { askVSUS } from "./utils/askVSUS";
 import { showInputBox } from "./utils/showInputBox";
+import { AskVSUSWebPanel } from "./components/askVSUSWebPanel";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -19,14 +20,11 @@ export function activate(context: vscode.ExtensionContext) {
 
       if (question !== undefined) {
         const response = await askVSUS(question);
-        const panel = vscode.window.createWebviewPanel(
-          "AskVsus", // Identifies the type of the webview. Used internally
-          "AskVsus", // Title of the panel displayed to the user
-          vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-          {} // Webview options. More on these later.
-        );
-        // And set its HTML content
-        panel.webview.html = getWebviewContent(question, response);
+
+        const aVSUSPanel = new AskVSUSWebPanel();
+
+        aVSUSPanel.setWebViewPanelHTMLContent([question, response]);
+        aVSUSPanel.showWebView();
       }
     })
   );
@@ -119,65 +117,6 @@ function registerNotification(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
-
-function getWebviewContent(question: string, response: string) {
-  return `
-  <!DOCTYPE html>
-  <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AVUS</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-  
-      body {
-        background-color: black;
-        margin: 20px;
-        height: 100vh;
-        font-family: sans-serif;
-      }
-  
-      #question {
-        width: 100%;
-        height: fit-content;
-        padding-bottom: 1rem ;
-        border-bottom: rgb(17, 0, 253) 4px solid;
-        font-size: 1.5rem;
-        text-align: center;
-        color: aliceblue;
-        overflow-wrap: break-word;
-      }
-  
-      #response {
-        color: aliceblue;
-        margin-top: 20px;
-        letter-spacing: 1px;
-        font-size: 1.25rem;
-        overflow-wrap: break-word;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <div id="question" type="text">
-      ${question}
-    </div>
-    <div id="response">
-      ${response}
-    </div>
-  
-  </body>
-  
-  </html>
-`;
-}
 
 function getLanguageCompletion(
   language: "c" | "cpp" | "java" | "csharp" | "go"
