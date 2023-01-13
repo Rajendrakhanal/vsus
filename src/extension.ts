@@ -7,10 +7,10 @@ import { AVSUS } from "./utils/AVSUS";
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
 
-  let helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
+  let helloWorld = vscode.commands.registerCommand("vsus.startup", () => {
     vscode.commands.executeCommand(
       "vsus.showInfoNotification",
-      "Hello World from VSUS"
+      "Welcome to VSUS!"
     );
   });
 
