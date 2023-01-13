@@ -1,7 +1,9 @@
+import * as vscode from "vscode";
+
 /* eslint-disable @typescript-eslint/naming-convention */
 const { Configuration, OpenAIApi } = require("openai");
 
-export async function askOpenAI(question: string|undefined ) {
+export async function askOpenAI(question: string | undefined) {
   try {
     const configuration = new Configuration({
       apiKey: "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",
@@ -21,5 +23,9 @@ export async function askOpenAI(question: string|undefined ) {
     }
   } catch (error: any) {
     console.log(error);
+    vscode.commands.executeCommand(
+      "vsus.showErrorNotification",
+      "Some error occured while generating answer to you question."
+    );
   }
 }

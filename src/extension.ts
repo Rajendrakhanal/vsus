@@ -8,8 +8,10 @@ export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
 
   let helloWorld = vscode.commands.registerCommand("vsus.helloWorld", () => {
-    vscode.window.showInformationMessage("Hello World from VSUS!");
-    console.log(vscode.window.activeTextEditor?.document.fileName);
+    vscode.commands.executeCommand(
+      "vsus.showInfoNotification",
+      "Hello World from VSUS"
+    );
   });
 
   context.subscriptions.push(
@@ -84,20 +86,20 @@ function registerProjectBoilerPlateCode(context: vscode.ExtensionContext) {
 function registerNotification(context: vscode.ExtensionContext) {
   const showInfoNotification = vscode.commands.registerCommand(
     "vsus.showInfoNotification",
-    () => {
-      vscode.window.showInformationMessage("Information from VSUS");
+    (message) => {
+      vscode.window.showInformationMessage(message);
     }
   );
   const showWarningNotification = vscode.commands.registerCommand(
     "vsus.showWarningNotification",
-    () => {
-      vscode.window.showWarningMessage("Warning from VSUS");
+    (message) => {
+      vscode.window.showWarningMessage(message);
     }
   );
   const showErrorNotification = vscode.commands.registerCommand(
     "vsus.showErrorNotification",
-    () => {
-      vscode.window.showErrorMessage("Error from VSUS");
+    (message) => {
+      vscode.window.showErrorMessage(message);
     }
   );
 

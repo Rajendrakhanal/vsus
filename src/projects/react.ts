@@ -17,16 +17,14 @@ export namespace reactProject {
       reactTerminal.runCommand(`cd ${destination}`);
       reactTerminal.runCommand(`npx create-react-app ${projectName}`);
 
-      setTimeout(
-        () =>
-          vscode.window.showInformationMessage(
-            "React project create successfully"
-          ),
-        8000
+      vscode.commands.executeCommand(
+        "vsus.showInfoNotification",
+        "Your reactjs project will be created shortly"
       );
     } else {
-      vscode.window.showInformationMessage(
-        "ERROR: project name. Failed to create project"
+      vscode.commands.executeCommand(
+        "vsus.showErrorNotification",
+        "Failed to create reactjs project"
       );
     }
   };

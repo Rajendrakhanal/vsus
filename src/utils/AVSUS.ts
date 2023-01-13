@@ -1,3 +1,5 @@
+import * as vscode from "vscode";
+
 import { WebViewPanel } from "../components/abstract/webViewPanel";
 import { askOpenAI } from "../utils/askOpenAI";
 import { showInputBox } from "./showInputBox";
@@ -24,9 +26,13 @@ export class AVSUS extends WebViewPanel {
     this.question = await showInputBox("Enter your question...", "Question");
     if (typeof this.question === undefined) {
       this.answer = "Invalid Question";
+
+      vscode.commands.executeCommand(
+        "vsus.showErrorNotification",
+        "Invalid question"
+      );
     } else {
       this.answer = await askOpenAI(this.question);
-      console.log(this.answer);
     }
 
     this.setWebViewPanelHTMLContent([this.question, this.answer]);
