@@ -22,7 +22,7 @@ export namespace nodeProject {
       const { name, parent, content } = file;
 
       const fileContent = content.join("");
-      if (parent == "") {
+      if (parent === "") {
         createFile(destination, name, fileContent);
       } else {
         createFile(path.join(destination, parent), name, fileContent);
@@ -35,6 +35,9 @@ export namespace nodeProject {
     terminal.sendText(`npm init --yes`);
     terminal.sendText(`npm i express dotenv morgan nodemon mongoose`);
 
-    vscode.window.showInformationMessage("Node project created successfully");
+    vscode.commands.executeCommand(
+      "vsus.showErrorNotification",
+      "Node project created successfully"
+    );
   };
 }

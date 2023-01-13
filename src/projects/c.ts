@@ -28,7 +28,10 @@ export namespace cProject {
         createFile(destination, name, fileContent);
       }
     });
-
-    vscode.window.showInformationMessage("C project created successfully");
+    
+    vscode.commands.executeCommand(
+      "vsus.showInfoNotification",
+      "C project created successfully"
+    );
   };
 }

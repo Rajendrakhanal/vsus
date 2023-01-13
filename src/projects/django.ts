@@ -25,7 +25,8 @@ export namespace djangoProject {
         3000
       );
     } else {
-      vscode.window.showInformationMessage(
+      vscode.commands.executeCommand(
+        "vsus.showErrorNotification",
         "ERROR: project name. Failed to create project"
       );
     }
