@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-import { Terminal } from "../utils/terminal";
+import { Terminal } from "../components/terminal";
 import { showInputBox } from "../utils/showInputBox";
 
 export namespace reactProject {
