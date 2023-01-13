@@ -42,18 +42,32 @@
 
 ## Features
 
-<!--
-* It must be written in point
-* Gif of boiler plate code
- -->
+- Boiler plate code
+- Project level boiler plate code for **c**, **c++** , [**nodejs**](https://nodejs.org/en/), [django](https://www.djangoproject.com) and [**reactjs**](https://reactjs.org)
+- User snippets upto **20+** languages
+- Integrated [**OpenAI**](https://beta.openai.com) model
 
 ## Installation
 
-1. Open Extensions from the Activity Bar in VS Code. View → Extensions
+1. Open **Extensions** from the Activity Bar in VS Code. View → Extensions
 2. Search for VSUS
 3. Click Install
 
 ## Commands
+
+- `Ask VSUS`
+
+- `Create Project : C`
+
+- `Create Project : C++`
+
+- `Create Project : reactjs`
+
+- `Create Project : nodejs`
+
+- `Create Project : dJango`
+
+###
 
 <!--
 * List of all command and their gif
