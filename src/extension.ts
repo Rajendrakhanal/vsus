@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
-import { askVSUS } from "./utils/askVSUS";
+import { askOpenAI } from "./utils/askOpenAI";
 import { showInputBox } from "./utils/showInputBox";
 import { AskVSUSWebPanel } from "./components/askVSUSWebPanel";
 
@@ -14,26 +14,26 @@ export function activate(context: vscode.ExtensionContext) {
     console.log(vscode.window.activeTextEditor?.document.fileName);
   });
 
-  context.subscriptions.push(
-    vscode.commands.registerCommand("askVSUS.start", async () => {
-      const question = await showInputBox("Enter your question...", "Question");
+  context.subscriptions.push();
 
-      if (question !== undefined) {
-        const response = await askVSUS(question);
+  const aVSUS = vscode.commands.registerCommand("askVSUS.start", async () => {
+    const question = await showInputBox("Enter your question...", "Question");
 
-        const aVSUSPanel = new AskVSUSWebPanel();
+    if (question !== undefined) {
+      const response = await askOpenAI(question);
 
-        aVSUSPanel.setWebViewPanelHTMLContent([question, response]);
-        aVSUSPanel.showWebView();
-      }
-    })
-  );
+      const aVSUSPanel = new AskVSUSWebPanel();
+
+      aVSUSPanel.setWebViewPanelHTMLContent([question, response]);
+      aVSUSPanel.showWebView();
+    }
+  });
 
   registerLanguageCompletion();
   registerProjectBoilerPlateCode(context);
   registerNotification(context);
 
-  context.subscriptions.push(helloWorld);
+  context.subscriptions.push(helloWorld, aVSUS);
 }
 
 function registerLanguageCompletion() {
