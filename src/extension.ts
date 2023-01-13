@@ -92,14 +92,14 @@ function registerNotification(context: vscode.ExtensionContext) {
   );
   const showWarningNotification = vscode.commands.registerCommand(
     "vsus.showWarningNotification",
-    () => {
-      vscode.window.showWarningMessage("Warning from VSUS");
+    (message) => {
+      vscode.window.showWarningMessage(message);
     }
   );
   const showErrorNotification = vscode.commands.registerCommand(
     "vsus.showErrorNotification",
-    () => {
-      vscode.window.showErrorMessage("Error from VSUS");
+    (message) => {
+      vscode.window.showErrorMessage(message);
     }
   );
 

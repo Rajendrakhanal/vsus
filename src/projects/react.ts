@@ -27,7 +27,7 @@ export namespace reactProject {
     } else {
       vscode.commands.executeCommand(
         "vsus.showErrorNotification",
-        "ERROR: project name. Failed to create project"
+        "Failed to create reactjs project"
       );
     }
   };

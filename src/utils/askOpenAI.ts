@@ -24,7 +24,7 @@ export async function askOpenAI(question: string | undefined) {
   } catch (error: any) {
     console.log(error);
     vscode.commands.executeCommand(
-      "vsus.showInfoNotification",
+      "vsus.showErrorNotification",
       "Some error occured while generating answer to you question."
     );
   }

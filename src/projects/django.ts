@@ -10,7 +10,7 @@ export namespace djangoProject {
       "Enter name of your project"
     );
 
-    if (projectName !== undefined) {
+    if (projectName !== undefined && projectName.length>0) {
       const djangoTerminal = new Terminal();
 
       djangoTerminal.toggleVisibility();
@@ -27,7 +27,7 @@ export namespace djangoProject {
     } else {
       vscode.commands.executeCommand(
         "vsus.showErrorNotification",
-        "ERROR: project name. Failed to create project"
+        "Failed to create django project"
       );
     }
   };
