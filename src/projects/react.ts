@@ -1,24 +1,22 @@
 import * as vscode from "vscode";
+
+import { Terminal } from "../utils/terminal";
+import { showInputBox } from "../utils/showInputBox";
+
 export namespace reactProject {
   export const createReactProject = async (destination: string) => {
-    const projectName = await vscode.window.showInputBox({
-      ignoreFocusOut: true,
-      placeHolder: "Name of your project. Example: hello-world",
-      prompt: "Enter name of your project",
-      validateInput: (text: string) => {
-        const correctProjectName = /^[A-Za-z-]+$/;
-        if (text.match(correctProjectName)) {
-          return null;
-        }
-        return "Error project name.";
-      },
-    });
+    const projectName = await showInputBox(
+      "Name of your project. Example: hello-world",
+      "Enter name of your project"
+    );
 
     if (projectName !== undefined) {
-      const term = vscode.window.createTerminal();
-      term.show();
-      term.sendText(`cd ${destination}`);
-      term.sendText(`npx create-react-app ${projectName}`);
+      const reactTerminal = new Terminal();
+
+      reactTerminal.toggleVisibility();
+      reactTerminal.runCommand(`cd ${destination}`);
+      reactTerminal.runCommand(`npx create-react-app ${projectName}`);
+
       setTimeout(
         () =>
           vscode.window.showInformationMessage(
