@@ -2,8 +2,13 @@
   "name": "vsus",
   "displayName": "VSUS",
   "publisher": "VSUS",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Feel the VSUS, Fall for VSUS ",
+  "icon": "VSUSlogo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rajendrakhanal/vsus"
+  },
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
