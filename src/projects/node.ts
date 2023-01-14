@@ -6,6 +6,7 @@ import { createFolder } from "../utils/createFolder";
 
 import * as starterFile from "./staterContent.json";
 import { showInputBox } from "../utils/showInputBox";
+import { Terminal } from "../components/terminal";
 
 export namespace nodeProject {
   const projectDetails = starterFile.node;
@@ -37,11 +38,15 @@ export namespace nodeProject {
       }
     });
 
-    const terminal = vscode.window.createTerminal();
-    terminal.show();
-    terminal.sendText(`cd ${destination}`);
-    terminal.sendText(`npm init --yes`);
-    terminal.sendText(`npm i express dotenv morgan nodemon mongoose`);
+
+    const nodejsTerminal = new Terminal();
+
+    nodejsTerminal.toggleVisibility();
+
+    nodejsTerminal.runCommand(`cd ${destination}`);
+    nodejsTerminal.runCommand(`npm init --yes`);
+    nodejsTerminal.runCommand(`npm i express dotenv morgan nodemon mongoose`);
+
 
     vscode.commands.executeCommand(
       "vsus.showInfoNotification",
