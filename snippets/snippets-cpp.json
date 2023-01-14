@@ -1,0 +1,142 @@
+{
+  "foreach": {
+    "prefix": "foreach",
+    "body": [
+      "for(${1:auto} ${2:var} : ${3:collection_to_loop})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for range-based for loop (c++11) statement"
+  },
+  "enum class": {
+    "prefix": "enum class",
+    "body": ["enum class ${1:MyClass} {$0};"],
+    "description": "Code snippet for enum class (c++11)"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:MyClass}",
+      "{",
+      "public:",
+      "\t$1();",
+      "\t$1($1 &&) = default;",
+      "\t$1(const $1 &) = default;",
+      "\t$1 &operator=($1 &&) = default;",
+      "\t$1 &operator=(const $1 &) = default;",
+      "\t~$1();",
+      "",
+      "private:",
+      "\t$2",
+      "};",
+      "",
+      "$1::$1()",
+      "{",
+      "}",
+      "",
+      "$1::~$1()",
+      "{",
+      "}"
+    ],
+    "description": "Code snippet for class"
+  },
+  "eclass": {
+    "prefix": "eclass",
+    "body": [
+      "class ${1:MyClass}",
+      "{",
+      "public:",
+      "\t$2",
+      "private:",
+      "\t$3",
+      "};",
+      ""
+    ],
+    "description": "Code snippet for empty class"
+  },
+  "qclass": {
+    "prefix": "qclass",
+    "body": [
+      "class ${1:MyClass} : public QObject",
+      "{",
+      "\tQ_OBJECT;",
+      "public:",
+      "\nexplicit $1(QObject *parent = nullptr);",
+      "\t$2",
+      "signals:",
+      "",
+      "public slots:",
+      "};",
+      ""
+    ],
+    "description": "Code snippet for empty Qt class"
+  },
+  "classi": {
+    "prefix": "classi",
+    "body": [
+      "class ${1:MyClass}",
+      "{",
+      "public:",
+      "\t$1() = default;",
+      "\t$1($1 &&) = default;",
+      "\t$1(const $1 &) = default;",
+      "\t$1 &operator=($1 &&) = default;",
+      "\t$1 &operator=(const $1 &) = default;",
+      "\t~$1() = default;",
+      "",
+      "private:",
+      "\t$2",
+      "};"
+    ],
+    "description": "Code snippet for class with inline constructor/destructor"
+  },
+  "interface": {
+    "prefix": "interface",
+    "body": ["__interface I${1:Interface}", "{", "\t$0", "};"],
+    "description": "Code snippet for interface (Visual C++)"
+  },
+  "namespace": {
+    "prefix": "namespace",
+    "body": ["namespace ${1:MyNamespace}", "{", "\t$0", "}"]
+  },
+
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t",
+      "}",
+      "catch (const std::exception&) {",
+      "\t$1",
+      "}"
+    ],
+    "description": "Code snippet for try catch"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": ["std::cout << \"${1:message}\" << std::endl;"],
+    "description": "Code snippet for printing to std::cout, provided the header is set"
+  },
+  "cin": {
+    "prefix": "cin",
+    "body": ["std::cin >> $1;"],
+    "description": "Code snippet for std::cin, provided the header is set"
+  },
+
+  "#inc": {
+    "prefix": "#inc",
+    "body": ["#include \"$0\""],
+    "description": "Code snippet for #include \" \""
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": ["#include <$0>"],
+    "description": "Code snippet for #include < >"
+  },
+  "#def": {
+    "prefix": "def",
+    "body": ["#define $0"],
+    "description": "Code snippet for #define \" \""
+  }
+}

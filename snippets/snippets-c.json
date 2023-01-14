@@ -134,7 +134,7 @@
     "body": ["while ($1) {", "\t$0", "}"],
     "description": ""
   },
-  "Do...while loop": {
+  "do...while loop": {
     "prefix": "do",
     "body": ["do {", "\t$1", "} while($2);"],
     "description": "Creates a do...while loop"
