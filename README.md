@@ -50,8 +50,18 @@
 ## Installation
 
 1. Open **Extensions** from the Activity Bar in VS Code. View → Extensions
-2. Search for VSUS
+2. Search for VSUS, from VSUS
 3. Click Install
+
+### Adding your OpenAI Key
+
+- Login/Signup to you [**Open AI**](https://beta.openai.com) account
+- Navigate to this [link](https://beta.openai.com/account/api-keys)
+- Create a **new secret key**
+- Copy the newly generated secret key.
+- Open your vscode setting.
+- Search for `*apikey*`
+- In the input box, paste the OpenAI key.
 
 ## Commands
 
