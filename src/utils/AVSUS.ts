@@ -72,7 +72,8 @@ export class AVSUS extends WebViewPanel {
     
     }
     .vsus_div{
-        background-color: rgb(69, 82, 197);
+        background-color: #1a1b21;
+       
         padding: 1.5rem;
         border-radius: 5px;
        box-shadow: -5px 3px 12px 4px #A599E9;
@@ -82,7 +83,7 @@ export class AVSUS extends WebViewPanel {
     
     #question {
       margin: 2px;
-      color: white;
+      color: rgb(192,192,192);
       font-size: 1.8rem;
       text-align: center;
     }
@@ -91,12 +92,12 @@ export class AVSUS extends WebViewPanel {
       content: "";
       display: block;
       margin-top: 5px;
-      border: white solid 2px;
+      border: rgb(192,192,192) solid 2px;
     }
     
     #answer {
       margin-top: 16px;
-      color: white;
+      color: rgb(192,192,192);
       font-size: 1rem;
       letter-spacing: 2px;
       line-height: 1.3rem;
@@ -114,7 +115,7 @@ export class AVSUS extends WebViewPanel {
     ${response}
     </div>
     </div>
-  </div>
+    </div>
     </body>
     
     </html>
