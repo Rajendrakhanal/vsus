@@ -17,4 +17,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### 2.0.0
 
-- Fix the issue of snippet conflict
+- Fixed the issue of snippet conflict
+
+### 2.0.1
+- Fixed the issue in nodejs
