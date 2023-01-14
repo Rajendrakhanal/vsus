@@ -13,7 +13,7 @@
     "vscode": "^1.74.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
   ],
   "activationEvents": [
     "onCommand:vsus.welcome"
@@ -65,91 +65,95 @@
     "snippets": [
       {
         "language": "c",
-        "path": "./src/json/snippets/c.json"
+        "path": "./snippets/snippets-c.json"
       },
       {
         "language": "cpp",
-        "path": "./src/json/snippets/cpp.json"
+        "path": "./snippets/snippets-c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/snippets-cpp.json"
       },
       {
         "language": "csharp",
-        "path": "./src/json/snippets/csharp.json"
+        "path": "./snippets/snippets-csharp.json"
       },
       {
         "language": "css",
-        "path": "./src/json/snippets/css.json"
+        "path": "./snippets/snippets-css.json"
       },
       {
         "language": "dart",
-        "path": "./src/json/snippets/dart.json"
+        "path": "./snippets/snippets-dart.json"
       },
       {
         "language": "go",
-        "path": "./src/json/snippets/go.json"
+        "path": "./snippets/snippets-go.json"
       },
       {
         "language": "html",
-        "path": "./src/json/snippets/html.json"
+        "path": "./snippets/snippets-html.json"
       },
       {
         "language": "java",
-        "path": "./src/json/snippets/java.json"
+        "path": "./snippets/snippets-java.json"
       },
       {
         "language": "julia",
-        "path": "./src/json/snippets/julia.json"
+        "path": "./snippets/snippets-julia.json"
       },
       {
         "language": "latex",
-        "path": "./src/json/snippets/latex.json"
+        "path": "./snippets/snippets-latex.json"
       },
       {
         "language": "lua",
-        "path": "./src/json/snippets/lua.json"
+        "path": "./snippets/snippets-lua.json"
       },
       {
         "language": "markdown",
-        "path": "./src/json/snippets/markdown.json"
+        "path": "./snippets/snippets-markdown.json"
       },
       {
         "language": "php",
-        "path": "./src/json/snippets/php.json"
+        "path": "./snippets/snippets-php.json"
       },
       {
         "language": "r",
-        "path": "./src/json/snippets/r.json"
+        "path": "./snippets/snippets-r.json"
       },
       {
         "language": "ruby",
-        "path": "./src/json/snippets/ruby.json"
+        "path": "./snippets/snippets-ruby.json"
       },
       {
         "language": "rust",
-        "path": "./src/json/snippets/rust.json"
+        "path": "./snippets/snippets-rust.json"
       },
       {
         "language": "sql",
-        "path": "./src/json/snippets/sql.json"
+        "path": "./snippets/snippets-sql.json"
       },
       {
         "language": "swift",
-        "path": "./src/json/snippets/swift.json"
+        "path": "./snippets/snippets-swift.json"
       },
       {
         "language": "javascript",
-        "path": "./src/json/snippets/javascript/javascript.json"
+        "path": "./snippets/snippets-javascript.json"
       },
       {
         "language": "typescript",
-        "path": "./src/json/snippets/javascript/typescript.json"
+        "path": "./snippets/snippets-typescript.json"
       },
       {
         "language": "javascriptreact",
-        "path": "./src/json/snippets/javascript/react.json"
+        "path": "./snippets/snippets-react.json"
       },
       {
         "language": "python",
-        "path": "./src/json/snippets/python/python.json"
+        "path": "./snippets/snippets-python.json"
       }
     ],
     "configuration": {
