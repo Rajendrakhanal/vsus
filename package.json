@@ -67,32 +67,32 @@
         {
           "command": "askVSUS.start",
           "when": "editorTextFocus",
-          "group,": "askVSUS-menu-group@1"
+          "group": "askVSUS"
         },
         {
           "command": "vsus.createCProject",
           "when": "editorTextFocus",
-          "group": "askVSUS-menu-group@2"
+          "group": "menu@1"
         },
         {
           "command": "vsus.createCPPProject",
           "when": "editorTextFocus",
-          "group": "askVSUS-menu-group@3"
+          "group": "menu@2"
         },
         {
           "command": "vsus.createReactProject",
           "when": "editorTextFocus",
-          "group": "askVSUS-menu-group@4"
+          "group": "menu@3"
         },
         {
           "command": "vsus.createNodeProject",
           "when": "editorTextFocus",
-          "group": "askVSUS-menu-group@5"
+          "group": "menu@4"
         },
         {
           "command": "vsus.createdjangoProject",
           "when": "editorTextFocus",
-          "group": "askVSUS-menu-group@6"
+          "group": "menu@5"
         }
       ],
       "snippets": [
@@ -201,6 +201,24 @@
         }
       }
     },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "askVSUS",
+          "title": "askVSUS",
+          "icon": "./VSUSlogo.png"
+        }
+      ]
+    },
+    "views": {
+      "askVSUS": [
+        {
+          "type": "webview",
+          "id": "askVSUS.chatView",
+          "name": "askVSUS"
+        }
+      ]
+    },
     "scripts": {
       "vscode:prepublish": "npm run package",
       "compile": "webpack",
@@ -213,13 +231,13 @@
       "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-      "@types/glob": "^8.0.0",
-      "@types/mocha": "^10.0.1",
-      "@types/node": "16.x",
-      "@types/vscode": "^1.74.0",
-      "@typescript-eslint/eslint-plugin": "^5.45.0",
-      "@typescript-eslint/parser": "^5.45.0",
-      "@vscode/test-electron": "^2.2.0",
+      "menu@1ypes/glob": "^8.0.0",
+      "menu@1ypes/mocha": "^10.0.1",
+      "menu@1ypes/node": "16.x",
+      "menu@1ypes/vscode": "^1.74.0",
+      "menu@1ypescript-eslint/eslint-plugin": "^5.45.0",
+      "menu@1ypescript-eslint/parser": "^5.45.0",
+      "menu@1scode/test-electron": "^2.2.0",
       "eslint": "^8.28.0",
       "glob": "^8.0.3",
       "mocha": "^10.1.0",
@@ -229,7 +247,7 @@
       "webpack-cli": "^5.0.0"
     },
     "dependencies": {
-      "@types/fs-extra": "^11.0.0",
+      "menu@1ypes/fs-extra": "^11.0.0",
       "dotenv": "^16.0.3",
       "fs-extra": "^11.1.0",
       "openai": "^3.1.0",
