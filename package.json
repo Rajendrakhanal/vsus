@@ -60,6 +60,10 @@
       {
         "command": "askVSUS.start",
         "title": "AskVSUS"
+      },
+      {
+        "command": "createProject.start",
+        "title": "Create Project"
       }
     ],
     "snippets": [

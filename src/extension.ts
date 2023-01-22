@@ -3,6 +3,7 @@ import { createProject } from "./projects";
 
 import boilerplatecode from "./json/boilerplatecode.json";
 import { AVSUS } from "./utils/AVSUS";
+import { Project } from "./projects/createProjects";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "vsus" is now active!');
@@ -19,6 +20,12 @@ export function activate(context: vscode.ExtensionContext) {
       const aVSUS = new AVSUS();
 
       await aVSUS.askQuestion();
+      aVSUS.showWebView();
+    })
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand("createProject.start", async () => {
+      const aVSUS = new Project();
       aVSUS.showWebView();
     })
   );
