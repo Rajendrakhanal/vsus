@@ -62,144 +62,178 @@
         "title": "AskVSUS"
       }
     ],
-    "snippets": [
-      {
-        "language": "c",
-        "path": "./snippets/snippets-c.json"
-      },
-      {
-        "language": "cpp",
-        "path": "./snippets/snippets-c.json"
-      },
-      {
-        "language": "cpp",
-        "path": "./snippets/snippets-cpp.json"
-      },
-      {
-        "language": "csharp",
-        "path": "./snippets/snippets-csharp.json"
-      },
-      {
-        "language": "css",
-        "path": "./snippets/snippets-css.json"
-      },
-      {
-        "language": "dart",
-        "path": "./snippets/snippets-dart.json"
-      },
-      {
-        "language": "go",
-        "path": "./snippets/snippets-go.json"
-      },
-      {
-        "language": "html",
-        "path": "./snippets/snippets-html.json"
-      },
-      {
-        "language": "java",
-        "path": "./snippets/snippets-java.json"
-      },
-      {
-        "language": "julia",
-        "path": "./snippets/snippets-julia.json"
-      },
-      {
-        "language": "latex",
-        "path": "./snippets/snippets-latex.json"
-      },
-      {
-        "language": "lua",
-        "path": "./snippets/snippets-lua.json"
-      },
-      {
-        "language": "markdown",
-        "path": "./snippets/snippets-markdown.json"
-      },
-      {
-        "language": "php",
-        "path": "./snippets/snippets-php.json"
-      },
-      {
-        "language": "r",
-        "path": "./snippets/snippets-r.json"
-      },
-      {
-        "language": "ruby",
-        "path": "./snippets/snippets-ruby.json"
-      },
-      {
-        "language": "rust",
-        "path": "./snippets/snippets-rust.json"
-      },
-      {
-        "language": "sql",
-        "path": "./snippets/snippets-sql.json"
-      },
-      {
-        "language": "swift",
-        "path": "./snippets/snippets-swift.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/snippets-javascript.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/snippets-typescript.json"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./snippets/snippets-react.json"
-      },
-      {
-        "language": "python",
-        "path": "./snippets/snippets-python.json"
-      }
-    ],
-    "configuration": {
-      "title": "AskVSUS",
-      "type": "object",
-      "properties": {
-        "askVSUS.apiKey": {
-          "type": "string",
-          "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
-          "order": 0
+    "menus": {
+      "editor/context": [
+        {
+          "command": "askVSUS.start",
+          "when": "editorTextFocus",
+          "group,": "askVSUS-menu-group@1"
+        },
+        {
+          "command": "vsus.createCProject",
+          "when": "editorTextFocus",
+          "group": "askVSUS-menu-group@2"
+        },
+        {
+          "command": "vsus.createCPPProject",
+          "when": "editorTextFocus",
+          "group": "askVSUS-menu-group@3"
+        },
+        {
+          "command": "vsus.createReactProject",
+          "when": "editorTextFocus",
+          "group": "askVSUS-menu-group@4"
+        },
+        {
+          "command": "vsus.createNodeProject",
+          "when": "editorTextFocus",
+          "group": "askVSUS-menu-group@5"
+        },
+        {
+          "command": "vsus.createdjangoProject",
+          "when": "editorTextFocus",
+          "group": "askVSUS-menu-group@6"
+        }
+      ],
+      "snippets": [
+        {
+          "language": "c",
+          "path": "./snippets/snippets-c.json"
+        },
+        {
+          "language": "cpp",
+          "path": "./snippets/snippets-c.json"
+        },
+        {
+          "language": "cpp",
+          "path": "./snippets/snippets-cpp.json"
+        },
+        {
+          "language": "csharp",
+          "path": "./snippets/snippets-csharp.json"
+        },
+        {
+          "language": "css",
+          "path": "./snippets/snippets-css.json"
+        },
+        {
+          "language": "dart",
+          "path": "./snippets/snippets-dart.json"
+        },
+        {
+          "language": "go",
+          "path": "./snippets/snippets-go.json"
+        },
+        {
+          "language": "html",
+          "path": "./snippets/snippets-html.json"
+        },
+        {
+          "language": "java",
+          "path": "./snippets/snippets-java.json"
+        },
+        {
+          "language": "julia",
+          "path": "./snippets/snippets-julia.json"
+        },
+        {
+          "language": "latex",
+          "path": "./snippets/snippets-latex.json"
+        },
+        {
+          "language": "lua",
+          "path": "./snippets/snippets-lua.json"
+        },
+        {
+          "language": "markdown",
+          "path": "./snippets/snippets-markdown.json"
+        },
+        {
+          "language": "php",
+          "path": "./snippets/snippets-php.json"
+        },
+        {
+          "language": "r",
+          "path": "./snippets/snippets-r.json"
+        },
+        {
+          "language": "ruby",
+          "path": "./snippets/snippets-ruby.json"
+        },
+        {
+          "language": "rust",
+          "path": "./snippets/snippets-rust.json"
+        },
+        {
+          "language": "sql",
+          "path": "./snippets/snippets-sql.json"
+        },
+        {
+          "language": "swift",
+          "path": "./snippets/snippets-swift.json"
+        },
+        {
+          "language": "javascript",
+          "path": "./snippets/snippets-javascript.json"
+        },
+        {
+          "language": "typescript",
+          "path": "./snippets/snippets-typescript.json"
+        },
+        {
+          "language": "javascriptreact",
+          "path": "./snippets/snippets-react.json"
+        },
+        {
+          "language": "python",
+          "path": "./snippets/snippets-python.json"
+        }
+      ],
+      "configuration": {
+        "title": "AskVSUS",
+        "type": "object",
+        "properties": {
+          "askVSUS.apiKey": {
+            "type": "string",
+            "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
+            "order": 0
+          }
         }
       }
+    },
+    "scripts": {
+      "vscode:prepublish": "npm run package",
+      "compile": "webpack",
+      "watch": "webpack --watch",
+      "package": "webpack --mode production --devtool hidden-source-map",
+      "compile-tests": "tsc -p . --outDir out",
+      "watch-tests": "tsc -p . -w --outDir out",
+      "pretest": "npm run compile-tests && npm run compile && npm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/glob": "^8.0.0",
+      "@types/mocha": "^10.0.1",
+      "@types/node": "16.x",
+      "@types/vscode": "^1.74.0",
+      "@typescript-eslint/eslint-plugin": "^5.45.0",
+      "@typescript-eslint/parser": "^5.45.0",
+      "@vscode/test-electron": "^2.2.0",
+      "eslint": "^8.28.0",
+      "glob": "^8.0.3",
+      "mocha": "^10.1.0",
+      "ts-loader": "^9.4.1",
+      "typescript": "^4.9.3",
+      "webpack": "^5.75.0",
+      "webpack-cli": "^5.0.0"
+    },
+    "dependencies": {
+      "@types/fs-extra": "^11.0.0",
+      "dotenv": "^16.0.3",
+      "fs-extra": "^11.1.0",
+      "openai": "^3.1.0",
+      "path": "^0.12.7"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^8.0.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/vscode": "^1.74.0",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "@vscode/test-electron": "^2.2.0",
-    "eslint": "^8.28.0",
-    "glob": "^8.0.3",
-    "mocha": "^10.1.0",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.9.3",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
-  },
-  "dependencies": {
-    "@types/fs-extra": "^11.0.0",
-    "dotenv": "^16.0.3",
-    "fs-extra": "^11.1.0",
-    "openai": "^3.1.0",
-    "path": "^0.12.7"
   }
 }
