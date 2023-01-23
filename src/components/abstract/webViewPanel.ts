@@ -9,7 +9,9 @@ export abstract class WebViewPanel {
       typeOfPanel,
       nameOfPanel,
       vscode.ViewColumn.One,
-      {}
+      {
+        enableScripts: true,
+      }
     );
   }
 
