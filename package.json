@@ -214,7 +214,7 @@
       "properties": {
         "askVSUS.apiKey": {
           "type": "string",
-          "markdownDescription": "API key from [OpenAI](https://beta.openai.com/account/api-keys)",
+          "markdownDescription": "For key [OpenAI](https://beta.openai.com/account/api-keys)",
           "order": 0
         },
         "askVSUS.model": {
@@ -284,40 +284,41 @@
           "order": 10
         }
       }
-    },
-    "scripts": {
-      "vscode:prepublish": "npm run package",
-      "compile": "webpack",
-      "watch": "webpack --watch",
-      "package": "webpack --mode production --devtool hidden-source-map",
-      "compile-tests": "tsc -p . --outDir out",
-      "watch-tests": "tsc -p . -w --outDir out",
-      "pretest": "npm run compile-tests && npm run compile && npm run lint",
-      "lint": "eslint src --ext ts",
-      "test": "node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-      "menu@1ypes/glob": "^8.0.0",
-      "menu@1ypes/mocha": "^10.0.1",
-      "menu@1ypes/node": "16.x",
-      "menu@1ypes/vscode": "^1.74.0",
-      "menu@1ypescript-eslint/eslint-plugin": "^5.45.0",
-      "menu@1ypescript-eslint/parser": "^5.45.0",
-      "menu@1scode/test-electron": "^2.2.0",
-      "eslint": "^8.28.0",
-      "glob": "^8.0.3",
-      "mocha": "^10.1.0",
-      "ts-loader": "^9.4.1",
-      "typescript": "^4.9.3",
-      "webpack": "^5.75.0",
-      "webpack-cli": "^5.0.0"
-    },
-    "dependencies": {
-      "menu@1ypes/fs-extra": "^11.0.0",
-      "dotenv": "^16.0.3",
-      "fs-extra": "^11.1.0",
-      "openai": "^3.1.0",
-      "path": "^0.12.7"
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^11.0.0",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.1.0",
+    "openai": "^3.1.0",
+    "path": "^0.12.7",
+    "vscode": "^1.1.37"
   }
 }
