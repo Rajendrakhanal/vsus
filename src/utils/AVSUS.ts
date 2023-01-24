@@ -148,7 +148,7 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
         type: "setPrompt",
         value: this._prompt,
       });
-      this._view?.webview.postMessage({ type: "addResponse", value: "Loading..." });
+      this._view?.webview.postMessage({ type: "addResponse", value: "Loading . . ." });
 
       // Increment the message number
       this._currentMessageNumber++;
@@ -176,7 +176,7 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
         if (completion.data.choices[0].finish_reason === "length") {
           response += `\n[WARNING] The response was truncated because it reached the maximum number of tokens. You may want to increase the maxTokens setting.\n\n`;
         }
-        response += `Tokens used: ${completion.data.usage?.total_tokens}`;
+        // response += `Tokens used: ${completion.data.usage?.total_tokens}`;
       } catch (error: any) {
         let e = "";
         if (error.response) {
@@ -257,6 +257,7 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
 				</style>
 			</head>
 			<body>
+      <br>
 				<input class="h-10 w-full text-white bg-stone-700 p-4 text-sm" placeholder="Ask something" id="prompt-input" />
 				
 				<div id="response" class="pt-4 text-sm">
