@@ -56,19 +56,10 @@
       {
         "command": "vsus.createdjangoProject",
         "title": "Create Project: django"
-      },
-      {
-        "command": "askVSUS.start",
-        "title": "AskVSUS"
       }
     ],
     "menus": {
       "editor/context": [
-        {
-          "command": "askVSUS.start",
-          "when": "editorTextFocus",
-          "group": "askVSUS"
-        },
         {
           "command": "vsus.createCProject",
           "when": "editorTextFocus",

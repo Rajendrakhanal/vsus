@@ -1,4 +1,4 @@
-import { Settings } from "./extension";
+import { Settings } from "./utils/AVSUS";
 
 export default (question: string, settings: Settings, selection?: string) => {
 	let prompt = '';

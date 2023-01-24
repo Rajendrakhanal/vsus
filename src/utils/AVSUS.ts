@@ -148,7 +148,7 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
         type: "setPrompt",
         value: this._prompt,
       });
-      this._view?.webview.postMessage({ type: "addResponse", value: "..." });
+      this._view?.webview.postMessage({ type: "addResponse", value: "Loading..." });
 
       // Increment the message number
       this._currentMessageNumber++;
@@ -257,7 +257,7 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
 				</style>
 			</head>
 			<body>
-				<input class="h-10 w-full text-white bg-stone-700 p-4 text-sm" placeholder="Ask GPT3 something" id="prompt-input" />
+				<input class="h-10 w-full text-white bg-stone-700 p-4 text-sm" placeholder="Ask something" id="prompt-input" />
 				
 				<div id="response" class="pt-4 text-sm">
 				</div>
