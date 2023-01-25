@@ -148,7 +148,10 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
         type: "setPrompt",
         value: this._prompt,
       });
-      this._view?.webview.postMessage({ type: "addResponse", value: "Loading . . ." });
+      this._view?.webview.postMessage({
+        type: "addResponse",
+        value: "Loading . . .",
+      });
 
       // Increment the message number
       this._currentMessageNumber++;
@@ -242,6 +245,9 @@ export class askVSUSViewProvider implements vscode.WebviewViewProvider {
 				.code {
 					white-space: pre;
 				}
+        #prompt-input{
+          border: 2px solid aqua;
+        }
 				p {
 					padding-top: 0.4rem;
 					padding-bottom: 0.4rem;
