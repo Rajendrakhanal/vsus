@@ -85,102 +85,102 @@
           "when": "editorTextFocus",
           "group": "menu@5"
         }
-      ],
-      "snippets": [
-        {
-          "language": "c",
-          "path": "./snippets/snippets-c.json"
-        },
-        {
-          "language": "cpp",
-          "path": "./snippets/snippets-c.json"
-        },
-        {
-          "language": "cpp",
-          "path": "./snippets/snippets-cpp.json"
-        },
-        {
-          "language": "csharp",
-          "path": "./snippets/snippets-csharp.json"
-        },
-        {
-          "language": "css",
-          "path": "./snippets/snippets-css.json"
-        },
-        {
-          "language": "dart",
-          "path": "./snippets/snippets-dart.json"
-        },
-        {
-          "language": "go",
-          "path": "./snippets/snippets-go.json"
-        },
-        {
-          "language": "html",
-          "path": "./snippets/snippets-html.json"
-        },
-        {
-          "language": "java",
-          "path": "./snippets/snippets-java.json"
-        },
-        {
-          "language": "julia",
-          "path": "./snippets/snippets-julia.json"
-        },
-        {
-          "language": "latex",
-          "path": "./snippets/snippets-latex.json"
-        },
-        {
-          "language": "lua",
-          "path": "./snippets/snippets-lua.json"
-        },
-        {
-          "language": "markdown",
-          "path": "./snippets/snippets-markdown.json"
-        },
-        {
-          "language": "php",
-          "path": "./snippets/snippets-php.json"
-        },
-        {
-          "language": "r",
-          "path": "./snippets/snippets-r.json"
-        },
-        {
-          "language": "ruby",
-          "path": "./snippets/snippets-ruby.json"
-        },
-        {
-          "language": "rust",
-          "path": "./snippets/snippets-rust.json"
-        },
-        {
-          "language": "sql",
-          "path": "./snippets/snippets-sql.json"
-        },
-        {
-          "language": "swift",
-          "path": "./snippets/snippets-swift.json"
-        },
-        {
-          "language": "javascript",
-          "path": "./snippets/snippets-javascript.json"
-        },
-        {
-          "language": "typescript",
-          "path": "./snippets/snippets-typescript.json"
-        },
-        {
-          "language": "javascriptreact",
-          "path": "./snippets/snippets-react.json"
-        },
-        {
-          "language": "python",
-          "path": "./snippets/snippets-python.json"
-        }
       ]
     },
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./snippets/snippets-c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/snippets-c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/snippets-cpp.json"
+      },
+      {
+        "language": "csharp",
+        "path": "./snippets/snippets-csharp.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/snippets-css.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/snippets-dart.json"
+      },
+      {
+        "language": "go",
+        "path": "./snippets/snippets-go.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/snippets-html.json"
+      },
+      {
+        "language": "java",
+        "path": "./snippets/snippets-java.json"
+      },
+      {
+        "language": "julia",
+        "path": "./snippets/snippets-julia.json"
+      },
+      {
+        "language": "latex",
+        "path": "./snippets/snippets-latex.json"
+      },
+      {
+        "language": "lua",
+        "path": "./snippets/snippets-lua.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/snippets-markdown.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/snippets-php.json"
+      },
+      {
+        "language": "r",
+        "path": "./snippets/snippets-r.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./snippets/snippets-ruby.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/snippets-rust.json"
+      },
+      {
+        "language": "sql",
+        "path": "./snippets/snippets-sql.json"
+      },
+      {
+        "language": "swift",
+        "path": "./snippets/snippets-swift.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets-javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets-react.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/snippets-python.json"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
